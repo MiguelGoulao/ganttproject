@@ -1,0 +1,214 @@
+/*!
+ * Copyright (c) 2022 Dmitry Barashev, BarD Software s.r.o.
+ *
+ * This file is part of GanttProject, an open-source project management tool.
+ *
+ * GanttProject is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ * GanttProject is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
+ */
+/*
+Copyright 2021 BarD Software s.r.o
+
+This file is part of GanttProject, an open-source project management tool.
+
+GanttProject is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+ the Free Software Foundation, either version 3 of the License, or
+ (at your option) any later version.
+
+GanttProject is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
+*/
+.dialog-alert {
+  -fx-pref-height: 400;
+  -fx-pref-width: 400;
+}
+.dialog-alert .header {
+  -fx-spacing: 5;
+  -fx-background-color: #f8d7da;
+  -fx-alignment: center-left;
+  -fx-fill-width: true;
+  -fx-padding: 15;
+  -fx-background-insets: 0 0 4 0;
+  -fx-effect: dropshadow(gaussian, #ccc, 4, 0, 0, 4);
+  -fx-font-size: 110%;
+  -fx-font-weight: bold;
+}
+.dialog-alert .content-pane {
+  -fx-padding: 1ex 1em;
+  -fx-border-width: 0;
+}
+
+/*!
+ * Copyright (c) 2021 Dmitry Barashev, BarD Software s.r.o.
+ *
+ * This file is part of GanttProject, an open-source project management tool.
+ *
+ * GanttProject is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ * GanttProject is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.btn-regular {
+  -fx-background-color: derive(#e0e0e0, -20%), #e0e0e0;
+  -fx-background-insets: 0, 1;
+  -fx-background-radius: 5;
+}
+.btn-regular:hover {
+  -fx-background-color: derive(#e0e0e0, -20%), derive(#e0e0e0, 20%);
+  -fx-fill: derive(#424242, -20%);
+}
+.btn-regular:focused {
+  -fx-background-color: derive(#e0e0e0, -20%), derive(#e0e0e0, 20%);
+  -fx-fill: derive(#424242, -20%);
+  -fx-background-color: derive(#424242, -20%), derive(#e0e0e0, 20%);
+  -fx-background-insets: 0, 1;
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+}
+.btn-regular:disabled {
+  -fx-opacity: 0.4;
+}
+
+.btn-regular .secondary {
+  -fx-background-color: transparent;
+}
+
+/* A single item in the list of available updates */
+.dlg-platform-update {
+  -fx-min-height: 400;
+}
+.dlg-platform-update .header {
+  -fx-spacing: 5;
+  -fx-background-color: #ffca28;
+  -fx-alignment: center-left;
+  -fx-fill-width: true;
+  -fx-padding: 15;
+  -fx-background-insets: 0 0 4 0;
+  -fx-effect: dropshadow(gaussian, #ccc, 4, 0, 0, 4);
+  -fx-font-size: 110%;
+  -fx-font-weight: bold;
+}
+.dlg-platform-update .content-pane {
+  -fx-padding: 20 20 20 20;
+}
+.dlg-platform-update .content-pane .help {
+  -fx-padding: 0 0 2ex 0;
+}
+.dlg-platform-update .content-pane .scroll-pane {
+  -fx-padding: 20 1em;
+  -fx-border-color: transparent;
+  -fx-background-color: white;
+}
+.dlg-platform-update .content-pane .scroll-pane > .viewport {
+  -fx-background-color: transparent;
+}
+.dlg-platform-update .content-pane .scroll-pane:hover .scroll-bar {
+  -fx-opacity: 1;
+}
+.dlg-platform-update .content-pane .scroll-pane .scroll-bar {
+  -fx-background-color: transparent;
+  -fx-opacity: 0.2;
+  -fx-max-width: 15;
+  -fx-pref-width: 15;
+}
+.dlg-platform-update .content-pane .scroll-pane .scroll-bar > .track {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0;
+  -fx-background-radius: 0.5em;
+}
+.dlg-platform-update .content-pane .scroll-pane .scroll-bar > .track-background {
+  -fx-background-color: transparent;
+  -fx-background-insets: 0, 1;
+}
+.dlg-platform-update .content-pane .scroll-pane .scroll-bar > .thumb {
+  -fx-background-color: #e0e0e0;
+}
+.dlg-platform-update .content-pane .scroll-pane .scroll-bar > .increment-button, .dlg-platform-update .content-pane .scroll-pane .scroll-bar .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0;
+}
+.dlg-platform-update .content-pane .scroll-pane .scroll-bar > .increment-button .increment-arrow, .dlg-platform-update .content-pane .scroll-pane .scroll-bar > .increment-button .decrement-arrow, .dlg-platform-update .content-pane .scroll-pane .scroll-bar .decrement-button .increment-arrow, .dlg-platform-update .content-pane .scroll-pane .scroll-bar .decrement-button .decrement-arrow {
+  -fx-shape: " ";
+  -fx-padding: 0;
+}
+.dlg-platform-update .content-pane .scroll-pane .body {
+  -fx-background-color: transparent;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .major-update .title {
+  -fx-fill: #424242;
+  -fx-font-size: 140%;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .major-update .subtitle {
+  -fx-fill: #616161;
+  -fx-font-size: 100%;
+  -fx-font-weight: normal;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .major-update .par {
+  -fx-fill: #616161;
+  -fx-padding: 2ex 0 0.5ex 0;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .minor-update {
+  -fx-background-color: transparent;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .minor-update .title {
+  -fx-fill: #424242;
+  -fx-font-size: 110%;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .minor-update .subtitle {
+  -fx-fill: #616161;
+  -fx-font-size: 80%;
+  -fx-font-weight: normal;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .minor-update .par {
+  -fx-fill: #616161;
+  -fx-padding: 0.5ex 0 0.5ex 0;
+}
+.dlg-platform-update .content-pane .scroll-pane .body .minor-update .progress {
+  -fx-font-size: 80%;
+  -fx-fill: #616161;
+  -fx-padding: 0 0 2ex 0;
+}
+.dlg-platform-update Label.no-updates {
+  -fx-font-size: 200%;
+}
+.dlg-platform-update Label.no-updates .glyph-icon {
+  -glyph-size: 40px;
+}
+.dlg-platform-update .props {
+  -fx-font-size: 120%;
+}
+.dlg-platform-update .props .toggle-switch {
+  -fx-content-display: left;
+  -fx-graphic-text-gap: 0;
+}
+.dlg-platform-update .button-pane {
+  -fx-padding: 2ex 1em 1ex 1em;
+  -fx-background-color: whitesmoke;
+}
+
+/*# sourceMappingURL=Update.css.map */
