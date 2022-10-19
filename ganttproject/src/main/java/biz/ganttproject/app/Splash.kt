@@ -46,7 +46,7 @@ fun showAsync(): CompletableFuture<Runnable> {
       effect = DropShadow()
       styleClass.add("main")
     }
-    val heartSplash = StackPane(ImageView(Image(GanttProject::class.java.getResourceAsStream("/icons/ukraine.png")))).also {
+    val heartSplash = StackPane(ImageView(Image(GanttProject::class.java.getResourceAsStream("/icons/portugal.png")))).also {
       it.maxWidth = 128.0
       it.maxHeight = 128.0
       it.styleClass.add("heart")

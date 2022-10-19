@@ -31,7 +31,7 @@ import net.sourceforge.ganttproject.chart.mouse.MouseInteraction;
 import net.sourceforge.ganttproject.gui.zoom.ZoomListener;
 import net.sourceforge.ganttproject.task.Task;
 
-public interface ChartImplementation extends ZoomListener {
+  public interface ChartImplementation extends ZoomListener {
   void paintChart(Graphics g);
 
   // void paintComponent(Graphics g, List<Task> visibleTasks);

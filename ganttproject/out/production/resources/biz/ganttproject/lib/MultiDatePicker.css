@@ -1,0 +1,52 @@
+/*!
+ * Copyright (c) 2021 Dmitry Barashev, BarD Software s.r.o.
+ *
+ * This file is part of GanttProject, an open-source project management tool.
+ *
+ * GanttProject is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ * GanttProject is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.btn-regular {
+  -fx-background-color: derive(#e0e0e0, -20%), #e0e0e0;
+  -fx-background-insets: 0, 1;
+  -fx-background-radius: 5;
+}
+.btn-regular:hover {
+  -fx-background-color: derive(#e0e0e0, -20%), derive(#e0e0e0, 20%);
+  -fx-fill: derive(#424242, -20%);
+}
+.btn-regular:focused {
+  -fx-background-color: derive(#e0e0e0, -20%), derive(#e0e0e0, 20%);
+  -fx-fill: derive(#424242, -20%);
+  -fx-background-color: derive(#424242, -20%), derive(#e0e0e0, 20%);
+  -fx-background-insets: 0, 1;
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+}
+.btn-regular:disabled {
+  -fx-opacity: 0.4;
+}
+
+.btn-regular .secondary {
+  -fx-background-color: transparent;
+}
+
+.date-picker-popup .edge-of-range {
+  -fx-background-color: #616161;
+  -fx-text-fill: whitesmoke;
+}
+.date-picker-popup .item-of-range {
+  -fx-background-color: #e0e0e0;
+}
+
+/*# sourceMappingURL=MultiDatePicker.css.map */
