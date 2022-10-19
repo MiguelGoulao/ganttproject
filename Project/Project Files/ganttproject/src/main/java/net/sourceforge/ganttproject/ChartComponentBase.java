@@ -50,7 +50,7 @@ public abstract class ChartComponentBase extends JPanel implements TimelineChart
   public static final Cursor HAND_CURSOR = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
   public static final Cursor DEFAULT_CURSOR;
   public static final Cursor CURSOR_DRAG;
-
+//ola
   static {
     Cursor drag = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
     Cursor hand = Cursor.getPredefinedCursor(Cursor.HAND_CURSOR);
