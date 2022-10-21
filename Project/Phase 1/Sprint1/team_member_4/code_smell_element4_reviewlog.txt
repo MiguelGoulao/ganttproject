@@ -13,7 +13,7 @@ Como apontado pelo elemento 4 (Joana) esta class é constituida basicamente só 
 a sugestão que ela dá para a resolução deste smell, parece-me ser a mais apropriada
 
 -------------------------------------------------------------------------------------------------------------------
-André Ribeiro 59835 - Template Method
+André Ribeiro 59835 - Dead Code
 
-O código apresentado corresponde evidentemente ao pattern mencionado. Boa inclusão dos multiplos
-snippets de código.
+O código apresentado evidentemente não tem utilidade para o resto do código, e por isso concordo
+com a sugestão de refatorização proposta. 
