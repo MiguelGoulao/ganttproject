@@ -13,6 +13,6 @@ fazer override de métodos já definidos pela classe superior, para se poderem a
 mais específicos.
 
 ----------------------------------------------------------------------------------------------------------------
-André Ribeiro 59835 - Template Method
+André Ribeiro 59835 - Facade
 
 O código apresentado corresponde evidentemente ao pattern facade e por isso é uma boa inclusão aos patterns do documento.
