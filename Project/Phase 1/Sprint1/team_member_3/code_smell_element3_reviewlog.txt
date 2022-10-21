@@ -13,3 +13,8 @@ Um code smell bem apontado, visto que estes comentários extensos efetivamente d
 também com a solução proposta.
 
 -------------------------------------------------------------------------------------------------------------------
+Filipe Leão - 60191
+
+--Long Method--
+
+O método apontado tem de facto vários argumentos que tornam o código pouco legível.
