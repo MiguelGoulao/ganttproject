@@ -6,4 +6,3 @@ André Ribeiro 59835 - Review of Duplicated Code
 O code smell foi bem encontrado, e como o colega disse (e bem), o código torna-se
 muito mais confuso com a inclusão de um dos métodos equivalentes. A solução embora
 ligeiramente generalizada é a melhor a se tomar. 
-

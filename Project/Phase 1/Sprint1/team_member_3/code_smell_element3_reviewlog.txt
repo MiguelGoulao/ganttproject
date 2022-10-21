@@ -12,3 +12,4 @@ André Ribeiro 59835 - Comments
 Um code smell bem apontado, visto que estes comentários extensos efetivamente dificultam a leitura do código. Concordo
 também com a solução proposta.
 
+-------------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,9 @@
+Júlio Simões - 44599
+
+--Message Chain--
+
+	A logica parece correta. Não há necessidade de precorrer 3 objectos para obter um.
+	Realocar a funcionalidade final para o início da cadeia, seria uma eventual estratégia  
+	a implementar nesta situação.
+
+-------------------------------------------------------------------------------------------------------------------

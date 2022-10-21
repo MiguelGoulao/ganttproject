@@ -1,0 +1,13 @@
+Júlio Simões - 44599
+
+--Speculative Generality--
+
+	Estas funções nunca são chamadas. 
+	Depende da intenção do developer na altura da criação dos métodos. 
+    Caso tenham sido criados com a intenção de serem utilizados um dia, 
+    então podemos considerar Speculative Generality. Caso contrário é código que terá sido utilizado em tempos,
+    e a dada altura deixou de ser preciso, e nesse caso estaríamos perante Dead Code.
+
+	
+
+-------------------------------------------------------------------------------------------------------------------
