@@ -13,3 +13,6 @@ Júlio Simões - 44599
 	Para ser considerado um clone este teria que ser uma copia exata do original.
 
 -------------------------------------------------------------------------------------------------------------------
+Joana Fernandes 60065 - Strategy
+Pattern bem localizado, apresenta características habituais do Strategy, a rationale aponta bem como funciona e porque
+faz sentido o seu uso. 
