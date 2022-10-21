@@ -1,0 +1,3 @@
+Joana Fernandes 60065 - Proxy Pattern Review
+
+Rationale bem apontada, é possível perceber claramente que é um Proxy Pattern, e porque é necessário.
