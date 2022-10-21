@@ -1,3 +1,8 @@
 Daniel Gavinho 59889 - Review of Comments
 Foi bem apontado que a existência destes TODOs é um code smell do tipo Comments.
 Também muito bem visto que várias classes sofriam de uma falta de comentários.
+
+André Ribeiro 59835 - Review of Duplicated Code
+O code smell foi bem encontrado, e como o colega disse (e bem), o código torna-se
+muito mais confuso com a inclusão de um dos métodos equivalentes. A solução embora
+ligeiramente generalizada é a melhor a se tomar. 
