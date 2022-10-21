@@ -1,0 +1,9 @@
+Júlio Simões - 44599
+
+--Dead Code--
+
+	Concordo com o comentário do Daniel. Uma classe sem conteúdo e/ou que nao é utilizada deve ser removida.
+	Caso tenha sido colocada como placeholder para futuros desenvolvimentos deverá ser construida.
+	Caso contrário deve ser eliminada.
+
+-------------------------------------------------------------------------------------------------------------------
