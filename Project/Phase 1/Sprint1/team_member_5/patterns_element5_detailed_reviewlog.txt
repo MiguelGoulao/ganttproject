@@ -1,3 +1,8 @@
 Joana Fernandes 60065 - Proxy Pattern Review
 
 Rationale bem apontada, é possível perceber claramente que é um Proxy Pattern, e porque é necessário.
+
+André Ribeiro 59835 - Factory Method
+
+Pattern bem identificado, localizado e explicado no Rationale, explicando o
+pattern no contexto do projeto.
