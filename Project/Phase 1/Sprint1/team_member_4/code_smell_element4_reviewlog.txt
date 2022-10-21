@@ -13,3 +13,7 @@ Como apontado pelo elemento 4 (Joana) esta class é constituida basicamente só 
 a sugestão que ela dá para a resolução deste smell, parece-me ser a mais apropriada
 
 -------------------------------------------------------------------------------------------------------------------
+André Ribeiro 59835 - Template Method
+
+O código apresentado corresponde evidentemente ao pattern mencionado. Boa inclusão dos multiplos
+snippets de código.
