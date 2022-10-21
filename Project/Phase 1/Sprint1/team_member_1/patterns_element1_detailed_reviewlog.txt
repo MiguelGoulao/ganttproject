@@ -1,0 +1,6 @@
+Daniel Gavinho 59889- Review do Template Pattern
+O pattern está bem identificado, as localizações bem demonstradas e o reasoning parece estar correto. 
+Em geral bom, está bem feito.
+
+André Ribeiro 59835 - Review do Builder Pattern
+Código muito bem localizado e apresentado. O destaque do código a amarelo é um excelente detalhe.
