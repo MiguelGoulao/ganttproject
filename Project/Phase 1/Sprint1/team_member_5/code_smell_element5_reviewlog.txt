@@ -1,0 +1,3 @@
+Joana Fernandes 60065 - Speculative Generality Review
+
+Code smell bem apontado, efetivamente a melhor opção é simplesmente eliminar o método, já que este não é usado de todo.
