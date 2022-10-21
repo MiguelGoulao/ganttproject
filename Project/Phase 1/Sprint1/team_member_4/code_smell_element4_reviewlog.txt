@@ -7,3 +7,9 @@ Júlio Simões - 44599
 	a implementar nesta situação.
 
 -------------------------------------------------------------------------------------------------------------------
+Daniel Gavinho 59889 - Review of Data Class
+
+Como apontado pelo elemento 4 (Joana) esta class é constituida basicamente só de getters,
+a sugestão que ela dá para a resolução deste smell, parece-me ser a mais apropriada
+
+-------------------------------------------------------------------------------------------------------------------

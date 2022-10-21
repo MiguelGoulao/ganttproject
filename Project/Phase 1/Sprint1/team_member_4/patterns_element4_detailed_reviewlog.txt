@@ -1,0 +1,6 @@
+Daniel Gavinho 59889 - Adapter Class
+
+Como apontado pelo elemento 4 (Joana) esta classe permite a comunicação entre duas outras.
+Então concordo que isto enquadra-se no pattern de Adapter Class
+
+----------------------------------------------------------------------------------------------------------------

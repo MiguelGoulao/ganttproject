@@ -11,3 +11,10 @@ Júlio Simões - 44599
 	
 
 -------------------------------------------------------------------------------------------------------------------
+Daniel Gavinho 59889 - Review of Dead Code
+
+Como demonstrado na imagem e comentário feito pelo André este código não tem nenhuma utilidade dentro do programa,
+por isso é o que considerariamos Dead Code.
+
+
+-------------------------------------------------------------------------------------------------------------------

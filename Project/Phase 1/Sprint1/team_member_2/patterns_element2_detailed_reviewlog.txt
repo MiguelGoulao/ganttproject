@@ -1,0 +1,6 @@
+Daniel Gavinho 59889 - Review of Proxy
+Element 2 (André) identificou e bem uma proxy,
+ o rationale está bem elaborado e permite perceber a utilidade do pattern
+
+
+---------------------------------------------------------------------------------
