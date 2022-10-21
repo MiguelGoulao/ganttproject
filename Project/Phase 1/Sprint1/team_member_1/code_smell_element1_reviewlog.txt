@@ -1,0 +1,3 @@
+Daniel Gavinho 59889 - Review of Comments
+Foi bem apontado que a existência destes TODOs é um code smell do tipo Comments.
+Também muito bem visto que várias classes sofriam de uma falta de comentários.
