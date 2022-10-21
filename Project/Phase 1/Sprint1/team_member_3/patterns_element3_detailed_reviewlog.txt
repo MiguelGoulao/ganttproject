@@ -1,0 +1,15 @@
+André Ribeiro 59835 - Command Pattern
+
+Código muito bem identificado e demonstrado. Pattern bem descrito no campo "Rationale".
+
+---------------------------------------------------------------------------------------------------------------------------------
+Júlio Simões - 44599
+
+--Facade--
+	 Concordo com o comentário do Daniel.
+	 Esta classe aparenta ser uma interface que disponibiliza métodos que escondem outros métodos mais complexos do sistema.
+	 Tornando-o mais fácil de utilizar. 
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+----------------------------------------------------------------------------------------------------------------------------------

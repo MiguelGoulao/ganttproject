@@ -1,0 +1,15 @@
+Daniel Gavinho 59889 - Review of Proxy
+Element 2 (André) identificou e bem uma proxy,
+ o rationale está bem elaborado e permite perceber a utilidade do pattern
+
+
+---------------------------------------------------------------------------------
+Júlio Simões - 44599
+
+-- Prototype/Clone --
+
+	Como a primeira propriedade do objecto (private String myName) está dependente
+	do que é recebido no método -> createPrototype(Object editValue), o objeto não é clonado na sua integridade.
+	Para ser considerado um clone este teria que ser uma copia exata do original.
+
+-------------------------------------------------------------------------------------------------------------------

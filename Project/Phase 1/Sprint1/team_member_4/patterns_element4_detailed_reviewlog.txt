@@ -1,0 +1,18 @@
+Daniel Gavinho 59889 - Adapter Class
+
+Como apontado pelo elemento 4 (Joana) esta classe permite a comunicação entre duas outras.
+Então concordo que isto enquadra-se no pattern de Adapter Class
+
+----------------------------------------------------------------------------------------------------------------
+Júlio Simões - Template method pattern
+
+Não acho que este exemplo possa ser considerado como um template method pattern.
+A ideia de um template, é a de que um classe (classe base) decide uma serie de passos necessários para resolver
+determinado problema. As sub classes implementam os métodos abstratos determinado pela classe base, e podem
+fazer override de métodos já definidos pela classe superior, para se poderem adaptar a resolver problemas
+mais específicos.
+
+----------------------------------------------------------------------------------------------------------------
+André Ribeiro 59835 - Facade
+
+O código apresentado corresponde evidentemente ao pattern facade e por isso é uma boa inclusão aos patterns do documento.
