@@ -18,3 +18,6 @@ por isso é o que considerariamos Dead Code.
 
 
 -------------------------------------------------------------------------------------------------------------------
+Joana Fernandes 60065 - Review of Data Class
+
+Como foi apontado, a classe tem apenas métodos getter. Portanto, é efetivamente uma Data Class.
