@@ -6,3 +6,7 @@ André Ribeiro 59835 - Factory Method
 
 Pattern bem identificado, localizado e explicado no Rationale, explicando o
 pattern no contexto do projeto.
+
+Daniel Gavinho 59889 - Middleman
+
+O element 5 (Filipe Leão) aponta bem como este comando serve simplesmente de middleman

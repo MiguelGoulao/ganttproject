@@ -6,3 +6,7 @@ André Ribeiro 59835 - Comments
 
 Apesar de parecer irrelevante, código desnecessário prejudica a leitura do código
 tornando-o mais confuso. Sendo assim concordo com a sugestão de refatorização proposta
+
+Daniel Gavinho 59889 - Template Method Review
+
+O elemento 5 apresenta bem o seu rationale em como esta classe é um pattern do tipo template
