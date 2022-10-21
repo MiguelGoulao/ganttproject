@@ -1,3 +1,3 @@
 Daniel Gavinho 59889- Review do Template Pattern
-O pattern está bem identificado, as localizações bem demonstradas e o reasoning parece estár correto. 
-Em geral bom está bem feito.
+O pattern está bem identificado, as localizações bem demonstradas e o reasoning parece estar correto. 
+Em geral bom, está bem feito.
