@@ -11,5 +11,9 @@ Júlio Simões - 44599
 	 Tornando-o mais fácil de utilizar. 
 
 ----------------------------------------------------------------------------------------------------------------------------------
+Filipe Leão - 60191
+
+--Factory--
+	Esta classe de facto encapsula a gestão das operações de outras classes, funcionando como uma fábrica.
 
 ----------------------------------------------------------------------------------------------------------------------------------
