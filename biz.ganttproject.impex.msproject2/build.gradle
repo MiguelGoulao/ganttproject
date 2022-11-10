@@ -1,29 +1,53 @@
-apply plugin: 'java'
-apply plugin: 'idea'
+plugins {
+    id "org.jetbrains.kotlin.jvm"
+}
+
+configurations {
+    api
+}
 
 dependencies {
-  compile fileTree(dir: 'lib', include: ['*.jar'])
-  compile project(':..:ganttproject')
+    providedCompile project(path: ':ganttproject', configuration: 'exported')
+    api('net.sf.mpxj:mpxj:10.7.+') {
+        exclude group: 'org.xerial', module: 'sqlite-jdbc'
+        exclude group: 'com.jgoodies'
+    }
+    implementation configurations.api
+    implementation 'javax.xml.bind:jaxb-api:2.3.+'
+    implementation 'javax.xml:jaxb-impl:2.1'
+
+    implementation configurations.providedCompile
+    implementation fileTree(dir: project.ext.libDir, include: ['*.jar'])
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
-        resources {
-        }
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "11"
+    }
+}
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "11"
     }
 }
 
-task copyPlugin(type: Copy) {
-    into(new File(rootProject.pluginsDir, project.name))
-    from(jar.outputs.getFiles().getFiles().flatten())
-    from(fileTree(".")) {
-      include "plugin.xml"
-      include "lib/**"
-    }
+task copyPlugin(dependsOn: assemble) {
     doLast {
-      println "Copying $project.name to $rootProject.pluginsDir"
+        println ">>> Installing $project.name"
+        copy {
+            into(new File(rootProject.pluginsDir, project.name))
+            from(fileTree(".")) {
+                include "plugin.xml"
+            }
+        }
+        copy {
+            into(new File(rootProject.pluginsDir, "${project.name}/lib/"))
+            from(jar.outputs.getFiles().getFiles().flatten())
+            from(configurations.compileClasspath.minus(configurations.providedCompile.resolve())) {
+                include "*.jar"
+            }
+            rename { filename -> filename + ".lib" }
+        }
+        println "<<< $project.name"
     }
 }

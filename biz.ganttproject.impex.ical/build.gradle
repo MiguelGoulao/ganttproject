@@ -2,28 +2,28 @@ apply plugin: 'java'
 apply plugin: 'idea'
 
 dependencies {
-  compile fileTree(dir: 'lib', include: ['*.jar'])
-  compile project(':..:ganttproject')
+    providedCompile project(path: ':ganttproject', configuration: 'exported')
+    implementation 'org.mnode.ical4j:ical4j:1.+'
+    implementation configurations.providedCompile
 }
 
-sourceSets {
-    main {
-        java {
-            srcDir 'src'
-        }
-        resources {
-        }
-    }
-}
-
-task copyPlugin(type: Copy) {
-    into(new File(rootProject.pluginsDir, project.name))
-    from(jar.outputs.getFiles().getFiles().flatten())
-    from(fileTree(".")) {
-      include "plugin.xml"
-      include "lib/**.jar"
-    }
+task copyPlugin(dependsOn: assemble) {
     doLast {
-      println "Copying $project.name to $rootProject.pluginsDir"
+        println ">>> Installing $project.name"
+        copy {
+            into(new File(rootProject.pluginsDir, project.name))
+            from(fileTree(".")) {
+                include "plugin.xml"
+            }
+        }
+        copy {
+            into(new File(rootProject.pluginsDir, "${project.name}/lib/"))
+            from(jar.outputs.getFiles().getFiles().flatten())
+            from(configurations.compileClasspath.minus(configurations.providedCompile.resolve())) {
+                include "*.jar"
+            }
+            rename { filename -> filename + ".lib" }
+        }
+        println "<<< $project.name"
     }
 }

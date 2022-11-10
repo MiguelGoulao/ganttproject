@@ -1,0 +1,121 @@
+@import "../app/buttons";
+@import "../app/dialogs";
+@import "../app/theme";
+
+.dlg-print-preview {
+  -fx-min-height: 400;
+  .header {
+    @include dialog-header($gp-light-gray);
+    -fx-font-weight: normal;
+  }
+
+  .content-pane {
+    -fx-background-color: $gp-control-background;
+    .controls {
+      -fx-background-color: whitesmoke;
+      -fx-padding: $default-vertical-padding 1em 0 1em;
+
+      .titled-pane {
+        .title {
+          -fx-background-color: transparent;
+        }
+        & > *.content {
+          -fx-background-color: transparent;
+          -fx-background-insets: 0;
+          -fx-border-color: transparent;
+          -fx-padding: 0;
+        }
+      }
+    }
+    .scroll-pane {
+      -fx-background-color: $gp-control-background;
+      & > .viewport {
+        -fx-background-color: transparent;
+        -fx-border-insets: 5 5 5 5;
+      }
+
+      &:hover .scroll-bar {
+        -fx-opacity: 1;
+      }
+      .scroll-bar {
+        @include scroll-bar(15);
+      }
+
+    }
+    .page {
+      -fx-padding: 1;
+      -fx-background-color: $gp-control-background;
+      -fx-border-color: $gp-dark-gray;
+      -fx-effect: dropshadow(gaussian, #ccc, 2, 0, 2, 2);
+    }
+  }
+
+  .slider {
+    .thumb {
+      -fx-background-color: derive($gp-light-gray, -20%), $gp-light-gray;
+      -fx-background-insets: 0, 1;
+      -fx-background-radius: 1.0em; /* makes sure this remains circular */
+      -fx-padding: 0.583333em; /* 7 */
+    }
+    &:focused .thumb,&:hover:focused .thumb {
+      -fx-background-color: $gp-orange,
+      derive($gp-dark-gray, -20%),
+      derive($gp-light-gray, 20%);
+      -fx-background-insets: -2, 0, 1;
+      -fx-background-radius: 1.0em; /* makes sure this remains circular */
+    }
+    &:hover .thumb {
+      -fx-background-color:
+      derive($gp-dark-gray, -20%),
+      derive($gp-light-gray, 20%);
+      -fx-background-insets: 0, 1;
+      -fx-background-radius: 1.0em; /* makes sure this remains circular */
+    }
+  }
+
+  .btn-small-attention {
+    -fx-background-color: $gp-orange;
+    -fx-text-fill: $gp-dark-gray;
+    -fx-padding: 0.5ex 1em 0.5ex 1em;
+    -fx-cursor: hand;
+  }
+  .button-pane {
+    @include dialog-button-pane();
+  }
+
+  .combo-box-base  {
+    @include btn-normal();
+
+    .arrow-button {
+      @include btn-normal(transparent);
+    }
+
+    &:hover {
+      @include btn-hovered();
+      .arrow-button {
+        @include btn-hovered(transparent);
+      }
+    }
+
+    &:focused {
+      @include btn-hovered();
+      @include btn-focused();
+
+      .arrow-button {
+        @include btn-hovered(transparent);
+      }
+    }
+
+    &:disabled {
+      -fx-opacity: .4;
+    }
+  }
+
+  /* ------- OPEN BUTTON ------- */
+
+  .combo-box-base:showing > .arrow-button,
+  .date-picker:showing > .arrow-button {
+    -fx-color: -fx-pressed-base;
+  }
+
+}

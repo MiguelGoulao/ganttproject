@@ -1,0 +1,97 @@
+/*!
+ * Copyright (c) 2021 Dmitry Barashev, BarD Software s.r.o.
+ *
+ * This file is part of GanttProject, an open-source project management tool.
+ *
+ * GanttProject is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ * GanttProject is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
+ */
+@import "theme";
+
+@mixin btn-normal($border: derive($gp-light-gray, -20%), $bg: $gp-light-gray) {
+  -fx-background-color: $border, $bg;
+  -fx-background-insets: 0, 1;
+  -fx-background-radius: 5;
+}
+
+@mixin btn-hovered($border: derive($gp-light-gray, -20%), $bg: derive($gp-light-gray, 20%)) {
+  -fx-background-color: $border, $bg;
+  -fx-fill: derive($gp-dark-gray, -20%);
+}
+
+@mixin btn-focused($border: derive($gp-dark-gray, -20%), $bg: derive($gp-light-gray, 20%)) {
+  -fx-background-color: $border, $bg;
+  -fx-background-insets: 0, 1;
+  -fx-border-color: transparent;
+  -fx-border-width: 0;
+}
+
+@mixin btn-regular() {
+  @include btn-normal();
+  &:hover {
+    @include btn-hovered();
+  }
+  &:focused {
+    @include btn-hovered();
+    @include btn-focused();
+  }
+  &:disabled {
+    -fx-opacity: .4;
+  }
+}
+
+.btn-regular {
+    @include btn-regular();
+}
+
+.btn-regular .secondary {
+  -fx-background-color: transparent;
+}
+
+@mixin scroll-bar($width) {
+  -fx-background-color: transparent;
+  -fx-opacity: 0.2;
+  -fx-max-width: $width;
+  -fx-pref-width: $width;
+
+  & > .track {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0.5em;
+  }
+
+  & > .track-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0, 1;
+  }
+
+  & > .thumb {
+    -fx-background-color: $gp-light-gray;
+  }
+
+  & > .increment-button, .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0em;
+    -fx-padding: 0;
+
+    .increment-arrow, .decrement-arrow {
+      -fx-shape: " ";
+      -fx-padding: 0;
+    }
+  }
+  //& > .increment-arrow,.decrement-arrow {
+  //  -fx-shape: " ";
+  //  -fx-padding:0;
+  //}
+
+}

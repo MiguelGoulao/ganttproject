@@ -2,7 +2,9 @@ package net.sourceforge.ganttproject;
 
 import biz.ganttproject.core.calendar.AlwaysWorkingTimeCalendarImpl;
 import biz.ganttproject.core.calendar.GPCalendarCalc;
+import biz.ganttproject.core.option.BooleanOption;
 import biz.ganttproject.core.option.ColorOption;
+import biz.ganttproject.core.option.DefaultBooleanOption;
 import biz.ganttproject.core.option.DefaultColorOption;
 import biz.ganttproject.core.time.CalendarFactory;
 import biz.ganttproject.core.time.GanttCalendar;
@@ -12,9 +14,8 @@ import net.sourceforge.ganttproject.gui.NotificationManager;
 import net.sourceforge.ganttproject.resource.HumanResourceManager;
 import net.sourceforge.ganttproject.roles.RoleManager;
 import net.sourceforge.ganttproject.roles.RoleManagerImpl;
-import net.sourceforge.ganttproject.task.CustomColumnsManager;
-import net.sourceforge.ganttproject.task.TaskManager;
-import net.sourceforge.ganttproject.task.TaskManagerConfig;
+import net.sourceforge.ganttproject.storage.ProjectDatabase.TaskUpdateBuilder;
+import net.sourceforge.ganttproject.task.*;
 
 import java.awt.*;
 import java.net.URL;
@@ -30,6 +31,10 @@ public class TestSetupHelper {
         private RoleManager myRoleManager;
 
         private DefaultColorOption myDefaultColorOption = new DefaultColorOption("taskcolor", Color.CYAN);
+
+        private DefaultBooleanOption mySchedulerDisabledOption = new DefaultBooleanOption("scheduler.disabled", false);
+
+        private TaskUpdateBuilder.Factory taskUpdateBuilderFactory = null;
 
         public TaskManagerBuilder() {
             myTimeUnitStack = new GPTimeUnitStack();
@@ -73,13 +78,22 @@ public class TestSetupHelper {
         }
 
         public TaskManager build() {
-            return TaskManager.Access.newInstance(null, this);
+            return TaskManager.Access.newInstance(null, this, taskUpdateBuilderFactory);
         }
 
         @Override
         public NotificationManager getNotificationManager() {
           return null;
         }
+
+      @Override
+      public BooleanOption getSchedulerDisabledOption() {
+        return mySchedulerDisabledOption;
+      }
+
+      public void setTaskUpdateBuilderFactory(TaskUpdateBuilder.Factory factory) {
+          taskUpdateBuilderFactory = factory;
+      }
     }
 
     public static TaskManagerBuilder newTaskManagerBuilder() {
