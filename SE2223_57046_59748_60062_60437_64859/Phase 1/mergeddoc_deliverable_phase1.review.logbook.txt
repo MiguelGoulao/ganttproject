@@ -1,0 +1,39 @@
+Carolina Simonet
+- Margarida Carvalho Code Smell 1 - reviewed
+- Filipe Santo Code Smell 2 - reviewed
+- Rui Capareira Code Smell 3 - reviewed
+- Margarida Carvalho Design Pattern 1 - reviewed
+- Filipe Santo Design Pattern 2 - reviewed
+- Jaime Russo Design Pattern 3 - reviewed 
+
+Filipe Santo
+- Rui Capareira Code Smell 1 - reviewed
+- Carolina Simonet Code Smell 2 - reviewed
+- Jaime Russo Code Smell 3 - reviewed
+- Carolina Simonet Design Pattern 1 - reviewed
+- Margarida Carvalho Design Pattern 2 - reviewed
+- Rui Capareira Design Pattern 3 - reviewed 
+
+Jaime Russo
+- Filipe Santo Code Smell 1 - reviewed
+- Rui Capareira Code Smell 2 - reviewed
+- Margarida Carvalho Code Smell 3 - reviewed
+- Filipe Santo Design Pattern 1 - reviewed
+- Rui Capareira Design Pattern 2 - reviewed
+- Carolina Simonet Design Pattern 3 - reviewed 
+
+Margarida Carvalho
+- Carolina Simonet Code Smell 1 - reviewed
+- Jaime Russo Code Smell 2 - reviewed
+- Filipe Santo Code Smell 3 - reviewed
+- Rui Capareira Design Pattern 1 - reviewed
+- Jaime Russo Design Pattern 2 - reviewed
+- Filipe Santo Design Pattern 3 - reviewed 
+
+Rui Capareira
+- Jaime Russo Code Smell 1 - reviewed
+- Margarida Carvalho Code Smell 2 - reviewed
+- Carolina Simonet Code Smell 3 - reviewed
+- Jaime Russo Design Pattern 1 - reviewed
+- Carolina Simonet Design Pattern 2 - reviewed
+- Margarida Carvalho Pattern 3 - reviewed 

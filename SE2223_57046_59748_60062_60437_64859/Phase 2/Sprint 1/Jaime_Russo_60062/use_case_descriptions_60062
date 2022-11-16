@@ -1,0 +1,11 @@
+Name: AddToMainTask
+Id: 3
+Description: Adds an existing task to an existing main task as a subtask
+Actors:
+Main: Project manager
+Pre-conditions: The task and the main task exist
+Main flow: 
+1.	The use case begins when the project manager highlights the main task and selects the tasks to be added
+2.	Add a task to a main task as a subtask
+Alternative flows:
+Post-conditions: A new subtask was added to a main task

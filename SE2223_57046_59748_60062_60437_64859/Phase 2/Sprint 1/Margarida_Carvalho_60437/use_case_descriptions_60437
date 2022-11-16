@@ -1,0 +1,14 @@
+Name: CreateMainTask
+Id: 1
+Description: Add a main task
+Actors: 
+Main: Project manager
+Secondary: None
+Pre-conditions: The main task has a subtask associated
+Main flow: 
+1.	The use case begins when the project manager highlights a group of tasks and selects “Create main task”
+2.	The system displays the main task with a set of associated subtasks
+2.1.	The information displayed by the main task is the total duration, the start day and the finish day
+Alternative flows: 
+
+Post-conditions: A new main task has been created and displays its total duration, start date, finish date and associated subtasks. 
