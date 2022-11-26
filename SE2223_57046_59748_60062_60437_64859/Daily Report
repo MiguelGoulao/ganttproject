@@ -11,6 +11,9 @@
     porque correspondem a adicionar botões dentro das tabs superiores à esquerda no programa. Para adicionarmos o botão acho que temos de mexer no action fora das pastas
     e nas classes que têm Toolbuilder como a ToolbarBuilder.java e a GPToolbar.java
     
+    Margarida Carvalho: continuação do botão; em src/net/sourceforge/ganttproject/GanttProject.java há uma secção builder.addButton e acho que é aí que 
+    temos de adicionar o botão; fiz isso e criei uma classe nova em src/net/sourceforge/ganttproject/action/edit chamada DailyInfoAction.java, mas não 
+    consegui dar build
 
 27/11:
 
