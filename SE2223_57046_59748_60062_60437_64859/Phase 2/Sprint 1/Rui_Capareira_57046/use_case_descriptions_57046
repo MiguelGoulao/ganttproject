@@ -1,0 +1,15 @@
+Name: ShowsDailyInformation
+Id: 2
+Description: The system displays a vertical line and information about the tasks of the current day
+Actors:
+Main: Project manager
+Secondary: None
+Pre-conditions: The system has tasks
+Main flow:
+1.	The use case begins when the project manager selects “Show daily information”
+2.	The system displays a text box with the active subtasks for the current day
+2.1.	The information displayed by the summary is the total duration, the start day and the finish day of each subtask
+3.	(The project manager)
+Alternative flows:
+	(a day with no tasks)
+Post-conditions: A text box with the daily information was showed.

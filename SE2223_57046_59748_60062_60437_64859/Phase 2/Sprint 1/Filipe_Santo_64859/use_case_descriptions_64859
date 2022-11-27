@@ -1,0 +1,12 @@
+Name: VerticalLine
+Id: 5
+Description: The system displays a vertical line of the current day
+Actors: 
+Main: 
+Secondary: None
+Pre-conditions: None
+Main flow: 
+1. The use case starts when the project manager opens the project
+2.  The system displays a vertical line at the start of the current day.
+Alternative flows: None
+Post-conditions: A vertical line displayed

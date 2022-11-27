@@ -1,0 +1,28 @@
+25/11:
+    Jaime Russo:
+    
+    Margarida Carvalho: botão igual ao do critical path, correu mas não alterou nada na app
+    
+    Carolina Simonet: tentei fazer botão como do/ undo criei uma class parecida à ganttproject\src\net\sourceforge\ganttproject\action\ResourcePropertiesAction.java
+    chamada ResourceDailyInfoAction.java e alterei a class icons.properties ainda não fiz push porque não apareceu ainda nada na app. App corre sem erros
+
+26/11:
+    Carolina Simonet: contunuação fazer botão- não podemos criar o botão dentro das pastas que estão em action em ganttproject\src\net\sourceforge\ganttproject\action
+    porque correspondem a adicionar botões dentro das tabs superiores à esquerda no programa. Para adicionarmos o botão acho que temos de mexer no action fora das pastas
+    e nas classes que têm Toolbuilder como a ToolbarBuilder.java e a GPToolbar.java
+    
+    Margarida Carvalho: continuação do botão; em src/net/sourceforge/ganttproject/GanttProject.java há uma secção builder.addButton e acho que é aí que 
+    temos de adicionar o botão; fiz isso e criei uma classe nova em src/net/sourceforge/ganttproject/action/edit chamada DailyInfoAction.java, mas não 
+    consegui dar build
+
+27/11:
+
+28/11:
+
+29/11:
+
+30/11:
+
+1/12:
+
+2/12:

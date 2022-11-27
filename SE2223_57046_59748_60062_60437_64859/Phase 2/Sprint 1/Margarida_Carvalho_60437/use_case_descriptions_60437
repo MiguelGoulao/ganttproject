@@ -1,0 +1,28 @@
+Name: ShowCriticalPath
+Id: 1
+Description: Checks the project’s critical path at any point of the project
+Actors: 
+    Main: Project Manager
+    Secondary: None
+Pre-conditions: 
+1.	The project already has associated tasks.
+Main flow: 
+1.	The use case starts when the project manager selects the “Show critical path” button.
+2.	The system shows the project’s critical path by adding lines to the critical tasks.
+Alternative flows: None
+Post-conditions: The project’s critical path is now displayed.
+
+Name: HideCriticalPath
+Id: 2
+Description: Checks the project’s critical path at any point of the project
+Actors: 
+    Main: Project Manager
+    Secondary: None
+Pre-conditions: 
+1.	The critical path is displayed.
+Main flow: 
+2.	The use case starts when the project manager selects the “Hide critical path” button.
+3.	The system hides the project’s critical path, by take back the lines of the critical tasks.
+Alternative flows: None
+Post-conditions: The project’s critical path is now hidden.
+

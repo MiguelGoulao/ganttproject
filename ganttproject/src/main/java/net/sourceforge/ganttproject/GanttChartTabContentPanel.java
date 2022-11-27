@@ -39,6 +39,7 @@ import javafx.scene.layout.HBox;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import net.sourceforge.ganttproject.action.BaselineDialogAction;
+import net.sourceforge.ganttproject.action.ButtonPopup;
 import net.sourceforge.ganttproject.action.CalculateCriticalPathAction;
 import net.sourceforge.ganttproject.action.GPAction;
 import net.sourceforge.ganttproject.chart.Chart;
@@ -62,6 +63,8 @@ class GanttChartTabContentPanel extends ChartTabContentPanel implements GPView {
   private final JComponent myGanttChart;
   private final UIFacade myWorkbenchFacade;
   private final CalculateCriticalPathAction myCriticalPathAction;
+
+  private final ButtonPopup newAddedButton;
   private final BaselineDialogAction myBaselineAction;
   private final Supplier<TaskTable> myTaskTableSupplier;
   private final TaskActions myTaskActions;
@@ -81,6 +84,8 @@ class GanttChartTabContentPanel extends ChartTabContentPanel implements GPView {
     // FIXME KeyStrokes of these 2 actions are not working...
     myCriticalPathAction = new CalculateCriticalPathAction(project.getTaskManager(), uiConfiguration, workbenchFacade);
     myCriticalPathAction.putValue(GPAction.TEXT_DISPLAY, ContentDisplay.TEXT_ONLY);
+    newAddedButton = new ButtonPopup(project.getTaskManager(), uiConfiguration, workbenchFacade);
+    newAddedButton.putValue(GPAction.TEXT_DISPLAY, ContentDisplay.TEXT_ONLY);
     myBaselineAction = new BaselineDialogAction(project, workbenchFacade);
     myBaselineAction.putValue(GPAction.TEXT_DISPLAY, ContentDisplay.TEXT_ONLY);
     addChartPanel(createSchedulePanel());
@@ -88,7 +93,7 @@ class GanttChartTabContentPanel extends ChartTabContentPanel implements GPView {
   }
 
   private Component createSchedulePanel() {
-    return new FXToolbarBuilder().withApplicationFont(TreeTableCellsKt.getApplicationFont()).addButton(myCriticalPathAction).addButton(myBaselineAction)
+    return new FXToolbarBuilder().withApplicationFont(TreeTableCellsKt.getApplicationFont()).addButton(myCriticalPathAction).addButton(myBaselineAction).addButton(newAddedButton)
       .withClasses("toolbar-common", "toolbar-small", "toolbar-chart", "align-right")
       .withScene().build().getComponent();
   }
