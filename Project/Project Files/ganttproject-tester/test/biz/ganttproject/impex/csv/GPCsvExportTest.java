@@ -3,13 +3,12 @@ package biz.ganttproject.impex.csv;
 
 import biz.ganttproject.core.model.task.TaskDefaultColumn;
 import biz.ganttproject.core.option.BooleanOption;
-import biz.ganttproject.customproperty.CustomPropertyDefinition;
-import biz.ganttproject.customproperty.PropertyTypeEncoder;
 import com.google.common.base.Charsets;
 import com.google.common.collect.ImmutableSet;
+import net.sourceforge.ganttproject.CustomPropertyDefinition;
+import net.sourceforge.ganttproject.CustomPropertyManager;
 import net.sourceforge.ganttproject.GanttTask;
 import net.sourceforge.ganttproject.io.CSVOptions;
-import net.sourceforge.ganttproject.language.GanttLanguage;
 import net.sourceforge.ganttproject.resource.HumanResource;
 import net.sourceforge.ganttproject.resource.HumanResourceManager;
 import net.sourceforge.ganttproject.roles.RoleManager;
@@ -18,21 +17,15 @@ import net.sourceforge.ganttproject.task.CustomColumnsManager;
 import net.sourceforge.ganttproject.task.Task;
 import net.sourceforge.ganttproject.task.TaskManager;
 import net.sourceforge.ganttproject.test.task.TaskTestCase;
-import org.apache.commons.csv.CSVFormat;
 
 import java.awt.*;
 import java.io.ByteArrayOutputStream;
-import java.util.Locale;
+import java.io.IOException;
 import java.util.Set;
-import java.util.concurrent.Callable;
-import java.util.function.Consumer;
-
-import static biz.ganttproject.impex.csv.SpreadsheetFormat.CSV;
 
 /**
  * @author dbarashev@bardsoftware.com
  */
-
 public class GPCsvExportTest extends TaskTestCase {
   @Override
   protected void setUp() throws Exception {
@@ -40,50 +33,47 @@ public class GPCsvExportTest extends TaskTestCase {
     TaskDefaultColumn.setLocaleApi(null);
   }
 
-  public void testResourceCustomFields() throws Exception {
+  public void testResourceCustomFields() throws IOException {
     HumanResourceManager hrManager = new HumanResourceManager(null, new CustomColumnsManager());
     TaskManager taskManager = getTaskManager();
     RoleManager roleManager = new RoleManagerImpl();
     CSVOptions csvOptions = enableOnly("id");
     CustomPropertyDefinition prop1 = hrManager.getCustomPropertyManager().createDefinition(
-        PropertyTypeEncoder.INSTANCE.encodeFieldType(String.class), "prop1", null);
+        CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(String.class), "prop1", null);
     CustomPropertyDefinition prop2 = hrManager.getCustomPropertyManager().createDefinition(
-        PropertyTypeEncoder.INSTANCE.encodeFieldType(String.class), "prop2", null);
+        CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(String.class), "prop2", null);
     CustomPropertyDefinition prop3 = hrManager.getCustomPropertyManager().createDefinition(
-        PropertyTypeEncoder.INSTANCE.encodeFieldType(String.class), "prop3", null);
-    hrManager.create("HR1", 1);
-    hrManager.create("HR2", 2);
-    hrManager.create("HR3", 3);
-
+        CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(String.class), "prop3", null);
+    hrManager.add(new HumanResource("HR1", 1, hrManager));
+    hrManager.add(new HumanResource("HR2", 2, hrManager));
+    hrManager.add(new HumanResource("HR3", 3, hrManager));
     hrManager.getById(1).addCustomProperty(prop3, "1");
     hrManager.getById(2).addCustomProperty(prop2, "2");
     hrManager.getById(3).addCustomProperty(prop1, "3");
 
     GanttCSVExport exporter = new GanttCSVExport(taskManager, hrManager, roleManager, csvOptions);
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    try (SpreadsheetWriter writer = exporter.createWriter(outputStream, CSV)) {
-      exporter.save(writer);
-    }
+    exporter.save(outputStream);
     String[] lines = new String(outputStream.toByteArray(), Charsets.UTF_8.name()).split("\\n");
     assertEquals(7, lines.length);
-    assertEquals("tableColID,prop1,prop2,prop3", lines[3].trim());
+    assertEquals("ID,prop1,prop2,prop3", lines[3].trim());
     assertEquals("1,,,1", lines[4].trim());
     assertEquals("2,,2,", lines[5].trim());
     assertEquals("3,3,,", lines[6].trim());
   }
 
-  public void testTaskCustomFields() throws Exception {
+  public void testTaskCustomFields() throws IOException {
     HumanResourceManager hrManager = new HumanResourceManager(null, new CustomColumnsManager());
     TaskManager taskManager = getTaskManager();
     RoleManager roleManager = new RoleManagerImpl();
     CSVOptions csvOptions = enableOnly(TaskDefaultColumn.ID.getStub().getID());
 
     CustomPropertyDefinition prop1 = taskManager.getCustomPropertyManager().createDefinition(
-        PropertyTypeEncoder.INSTANCE.encodeFieldType(String.class), "prop1", null);
+        CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(String.class), "prop1", null);
     CustomPropertyDefinition prop2 = taskManager.getCustomPropertyManager().createDefinition(
-        PropertyTypeEncoder.INSTANCE.encodeFieldType(String.class), "prop2", null);
+        CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(String.class), "prop2", null);
     CustomPropertyDefinition prop3 = taskManager.getCustomPropertyManager().createDefinition(
-        PropertyTypeEncoder.INSTANCE.encodeFieldType(String.class), "prop3", null);
+        CustomPropertyManager.PropertyTypeEncoder.encodeFieldType(String.class), "prop3", null);
     Task task1 = createTask();
     Task task2 = createTask();
     Task task3 = createTask();
@@ -93,9 +83,7 @@ public class GPCsvExportTest extends TaskTestCase {
 
     GanttCSVExport exporter = new GanttCSVExport(taskManager, hrManager, roleManager, csvOptions);
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    try (SpreadsheetWriter writer = exporter.createWriter(outputStream, CSV)) {
-      exporter.save(writer);
-    }
+    exporter.save(outputStream);
     String[] lines = new String(outputStream.toByteArray(), Charsets.UTF_8.name()).split("\\n");
     assertEquals(4, lines.length);
     assertEquals("tableColID,prop1,prop2,prop3", lines[0].trim());
@@ -105,7 +93,7 @@ public class GPCsvExportTest extends TaskTestCase {
 
   }
 
-  public void testResourceAssignments() throws Exception {
+  public void testResourceAssignments() throws IOException {
     HumanResourceManager hrManager = new HumanResourceManager(null, new CustomColumnsManager());
     TaskManager taskManager = getTaskManager();
     CSVOptions csvOptions = enableOnly(TaskDefaultColumn.ID.getStub().getID(), TaskDefaultColumn.RESOURCES.getStub().getID());
@@ -121,31 +109,20 @@ public class GPCsvExportTest extends TaskTestCase {
     task2.getAssignmentCollection().addAssignment(alice).setLoad(45.457f);
     task2.getAssignmentCollection().addAssignment(bob);
 
-    Callable<String[]> exportJob = () -> {
-      GanttCSVExport exporter = new GanttCSVExport(taskManager, hrManager, new RoleManagerImpl(), csvOptions);
-      ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-      try (SpreadsheetWriter writer = new CsvWriterImpl(outputStream, CSVFormat.DEFAULT)) {
-        exporter.save(writer);
-      }
-      return new String(outputStream.toByteArray(), Charsets.UTF_8.name()).split("\\n");
-    };
+    GanttCSVExport exporter = new GanttCSVExport(taskManager, hrManager, new RoleManagerImpl(), csvOptions);
+    ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+    exporter.save(outputStream);
+    String[] lines = new String(outputStream.toByteArray(), Charsets.UTF_8.name()).split("\\n");
 
-    Consumer<String[]> verifier = lines -> {
-      assertEquals(9, lines.length);
-      assertEquals("tableColID,resources,Assignments", lines[0].trim());
-      assertEquals("0,Alice,1:100.00", lines[1].trim());
-      assertEquals("1,Alice;Bob,1:45.46;2:0.00", lines[2].trim());
-      assertEquals("2,,", lines[3].trim());
-    };
+    assertEquals(9, lines.length);
+    assertEquals("tableColID,resources,Assignments", lines[0].trim());
+    assertEquals("0,Alice,1:100.00", lines[1].trim());
+    assertEquals("1,Alice;Bob,1:45.46;2:0.00", lines[2].trim());
+    assertEquals("2,,", lines[3].trim());
 
-    verifier.accept(exportJob.call());
-
-    // Change the locale to test decimal separators.
-    GanttLanguage.getInstance().setLocale(Locale.forLanguageTag("ru-RU"));
-    verifier.accept(exportJob.call());
   }
 
-  public void testTaskColor() throws Exception {
+  public void testTaskColor() throws IOException {
     TaskManager taskManager = getTaskManager();
     GanttTask task0 = taskManager.createTask();
     GanttTask task1 = taskManager.createTask();
@@ -164,9 +141,7 @@ public class GPCsvExportTest extends TaskTestCase {
         csvOptions
     );
     ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-    try (SpreadsheetWriter writer = new CsvWriterImpl(outputStream, CSVFormat.DEFAULT)) {
-      exporter.save(writer);
-    }
+    exporter.save(outputStream);
     String[] lines = new String(outputStream.toByteArray(), Charsets.UTF_8.name()).split("\\n");
     assertEquals(5, lines.length);
     assertEquals("tableColID,option.taskDefaultColor.label", lines[0].trim());
@@ -176,7 +151,7 @@ public class GPCsvExportTest extends TaskTestCase {
     assertEquals("3,", lines[4].trim());
   }
 
-  public void testBomOption() throws Exception {
+  public void testBomOption() throws IOException {
     TaskManager taskManager = getTaskManager();
     GanttTask task = taskManager.createTask();
     CSVOptions csvOptions = enableOnly(
@@ -190,9 +165,7 @@ public class GPCsvExportTest extends TaskTestCase {
           csvOptions
       );
       ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-      try (SpreadsheetWriter writer = new CsvWriterImpl(outputStream, CSVFormat.DEFAULT, true)) {
-        exporter.save(writer);
-      }
+      exporter.save(outputStream);
 
       byte[] bytes = outputStream.toByteArray();
       // Binary representation of Unicode FEFF
@@ -209,9 +182,7 @@ public class GPCsvExportTest extends TaskTestCase {
           csvOptions
       );
       ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-      try (SpreadsheetWriter writer = new CsvWriterImpl(outputStream, CSVFormat.DEFAULT)) {
-        exporter.save(writer);
-      }
+      exporter.save(outputStream);
 
       byte[] bytes = outputStream.toByteArray();
       // No BOM in the first bytes

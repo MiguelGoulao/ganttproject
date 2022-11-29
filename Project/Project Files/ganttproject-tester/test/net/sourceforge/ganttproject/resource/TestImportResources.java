@@ -4,8 +4,6 @@ import net.sourceforge.ganttproject.resource.HumanResourceMerger.MergeResourcesO
 import net.sourceforge.ganttproject.task.CustomColumnsManager;
 import junit.framework.TestCase;
 
-import java.util.Collections;
-
 public class TestImportResources extends TestCase {
 
     public void testMergeResourcesByName() {
@@ -20,7 +18,7 @@ public class TestImportResources extends TestCase {
         mergeFrom.add(new HumanResource("jack", 1, mergeFrom));
         mergeFrom.add(new HumanResource("joe", 2, mergeFrom));
 
-        mergeTo.importData(mergeFrom, new OverwritingMerger(mergeOption), Collections.emptyMap());
+        mergeTo.importData(mergeFrom, new OverwritingMerger(mergeOption));
 
         assertEquals(3, mergeTo.getResources().size());
         assertEquals("joe", mergeTo.getById(1).getName());
@@ -40,7 +38,7 @@ public class TestImportResources extends TestCase {
         mergeFrom.add(new HumanResource("jack", 1, mergeFrom));
         mergeFrom.add(new HumanResource("joe", 3, mergeFrom));
 
-        mergeTo.importData(mergeFrom, new OverwritingMerger(mergeOption), Collections.emptyMap());
+        mergeTo.importData(mergeFrom, new OverwritingMerger(mergeOption));
 
         assertEquals(3, mergeTo.getResources().size());
         assertEquals("jack", mergeTo.getById(1).getName());

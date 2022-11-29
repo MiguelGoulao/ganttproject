@@ -18,8 +18,9 @@ along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
 */
 package net.sourceforge.ganttproject.task.algorithm;
 
-import biz.ganttproject.core.calendar.WeekendCalendarImpl;
 import com.google.common.base.Suppliers;
+
+import biz.ganttproject.core.calendar.WeekendCalendarImpl;
 import net.sourceforge.ganttproject.TestSetupHelper;
 import net.sourceforge.ganttproject.task.Task;
 import net.sourceforge.ganttproject.task.TaskImpl;
@@ -42,7 +43,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency[] deps = new TaskDependency[] {createDependency(tasks[2], tasks[1]), createDependency(tasks[1], tasks[0])};
     DependencyGraph graph = createGraph(tasks, deps);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newMonday(), tasks[0].getStart());
@@ -59,7 +60,7 @@ public class SchedulerTest extends TaskTestCase {
         createDependency(tasks[1], tasks[0]), createDependency(tasks[3], tasks[2]), createDependency(tasks[3], tasks[1])};
     DependencyGraph graph = createGraph(tasks, deps);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newMonday(), tasks[0].getStart());
@@ -81,7 +82,7 @@ public class SchedulerTest extends TaskTestCase {
         createDependency(tasks[3], tasks[0])
     };
     DependencyGraph graph = createGraph(tasks, deps);
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newMonday(), tasks[0].getStart());
@@ -102,7 +103,7 @@ public class SchedulerTest extends TaskTestCase {
     graph.move(tasks[1], tasks[0]);
     graph.move(tasks[2], tasks[0]);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newMonday(), tasks[0].getStart());
@@ -130,7 +131,7 @@ public class SchedulerTest extends TaskTestCase {
     DependencyGraphTest.move(tasks[2], tasks[1], graph);
     graph.move(tasks[3], tasks[2]);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
     assertEquals(TestSetupHelper.newMonday(), tasks[2].getStart());
     assertEquals(TestSetupHelper.newMonday(), tasks[3].getStart());
@@ -144,7 +145,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency dep20 = getTaskManager().getDependencyCollection().createDependency(tasks[2], tasks[0], new FinishStartConstraintImpl(), TaskDependency.Hardness.RUBBER);
 
     DependencyGraph graph = createGraph(tasks, new TaskDependency[] {dep10, dep20});
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newMonday(), tasks[0].getStart());
@@ -160,7 +161,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency dep12 = getTaskManager().getDependencyCollection().createDependency(tasks[1], tasks[2], new FinishFinishConstraintImpl(), TaskDependency.Hardness.STRONG);
 
     DependencyGraph graph = createGraph(tasks, new TaskDependency[] {dep10, dep12});
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     // after scheduler run task1 shoud start on We because of strong FF dep
@@ -169,9 +170,7 @@ public class SchedulerTest extends TaskTestCase {
     assertEquals(TestSetupHelper.newWendesday(), tasks[2].getStart());
 
     // now shifting task2 to Tu
-    var mutator = tasks[2].createShiftMutator();
-    mutator.shift(getTaskManager().createLength(-1));
-    mutator.commit();
+    tasks[2].shift(getTaskManager().createLength(-1));
     scheduler.run();
 
     // task1 should follow task2
@@ -188,7 +187,7 @@ public class SchedulerTest extends TaskTestCase {
     DependencyGraphTest.move(tasks[1], tasks[0], graph);
     DependencyGraphTest.move(tasks[2], tasks[0], graph);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newSaturday(), tasks[0].getEnd());
@@ -219,7 +218,7 @@ public class SchedulerTest extends TaskTestCase {
     DependencyGraphTest.move(tasks[2], tasks[1], graph);
     DependencyGraphTest.move(tasks[3], tasks[1], graph);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newMonday(), tasks[1].getStart());
@@ -239,7 +238,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency[] deps = new TaskDependency[0];
     DependencyGraph graph = createGraph(tasks, deps);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newWendesday(), tasks[0].getStart());
@@ -256,7 +255,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency[] deps = new TaskDependency[0];
     DependencyGraph graph = createGraph(tasks, deps);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newFriday(), tasks[0].getStart());
@@ -274,7 +273,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency[] deps = new TaskDependency[] {createDependency(tasks[1], tasks[0])};
     DependencyGraph graph = createGraph(tasks, deps);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newTuesday(), tasks[1].getStart());
@@ -292,7 +291,7 @@ public class SchedulerTest extends TaskTestCase {
     TaskDependency[] deps = new TaskDependency[] {createDependency(tasks[1], tasks[0])};
     DependencyGraph graph = createGraph(tasks, deps);
 
-    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy())::get);
+    SchedulerImpl scheduler = new SchedulerImpl(graph, Suppliers.ofInstance(getTaskManager().getTaskHierarchy()));
     scheduler.run();
 
     assertEquals(TestSetupHelper.newWendesday(), tasks[1].getStart());

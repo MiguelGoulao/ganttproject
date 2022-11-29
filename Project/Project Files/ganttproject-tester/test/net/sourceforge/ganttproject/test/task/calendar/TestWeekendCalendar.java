@@ -48,25 +48,24 @@ public class TestWeekendCalendar extends TaskTestCase {
         GregorianTimeUnitStack.DAY), 0.1);
   }
 
-  private WeekendCalendarImpl myWeekendCalendar = new WeekendCalendarImpl();
-
   @Override
   protected TaskManager newTaskManager() {
     return TestSetupHelper.newTaskManagerBuilder().withCalendar(myWeekendCalendar).build();
   }
 
-    public void testNoWeekendsButHasHolidays() {
-        WeekendCalendarImpl noWeekendsOneHolidayCalendar = new WeekendCalendarImpl();
-        for (int i=1; i<=7; i++) {
-            noWeekendsOneHolidayCalendar.setWeekDayType(i, GPCalendar.DayType.WORKING);
-        }
-        noWeekendsOneHolidayCalendar.setPublicHolidays(ImmutableList.of(
-            CalendarEvent.newEvent(TestSetupHelper.newMonday().getTime(), false, CalendarEvent.Type.HOLIDAY, null, null)));
-        TaskManager mgr = TestSetupHelper.newTaskManagerBuilder().withCalendar(noWeekendsOneHolidayCalendar).build();
-        Task t = mgr.newTaskBuilder()
-            .withStartDate(TestSetupHelper.newFriday().getTime())
-            .build();
-        t.setEnd(TestSetupHelper.newWendesday());
-        assertEquals(4.0f, t.getDuration().getLength(GregorianTimeUnitStack.DAY));
+  private WeekendCalendarImpl myWeekendCalendar = new WeekendCalendarImpl();
+
+  public void testNoWeekendsButHasHolidays() {
+    WeekendCalendarImpl noWeekendsOneHolidayCalendar = new WeekendCalendarImpl();
+    for (int i = 1; i <= 7; i++) {
+      noWeekendsOneHolidayCalendar.setWeekDayType(i, GPCalendar.DayType.WORKING);
+    }
+    noWeekendsOneHolidayCalendar.setPublicHolidays(ImmutableList.of(
+        CalendarEvent.newEvent(TestSetupHelper.newMonday().getTime(), false, CalendarEvent.Type.HOLIDAY, null, null)));
+    TaskManager mgr = TestSetupHelper.newTaskManagerBuilder().withCalendar(noWeekendsOneHolidayCalendar).build();
+    Task t = mgr.newTaskBuilder().withStartDate(TestSetupHelper.newFriday().getTime()).build();
+    t.setEnd(TestSetupHelper.newWendesday());
+    assertEquals(4.0f, t.getDuration().getLength(GregorianTimeUnitStack.DAY));
+
   }
 }

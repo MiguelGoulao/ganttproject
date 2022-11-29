@@ -1,5 +1,6 @@
 package net.sourceforge.ganttproject.test.task.dependency;
 
+import net.sourceforge.ganttproject.GanttTask;
 import net.sourceforge.ganttproject.task.TaskContainmentHierarchyFacade;
 import net.sourceforge.ganttproject.task.TaskManager;
 import net.sourceforge.ganttproject.task.Task;
@@ -186,17 +187,14 @@ public class TestTaskDependencyCommon extends TaskTestCase {
         assertNull("Created the dependency between the SuperTask and Task2!", dep2);
     }
 
-    public void testDefaultHardnessStrong() {
-        TaskManager taskMgr = getTaskManager();
-        Task task1 = taskMgr.createTask();
-        Task task2 = taskMgr.createTask();
-        TaskDependency strongDependency = taskMgr.getDependencyCollection().createDependency(task1, task2);
-        assertEquals(TaskDependency.Hardness.STRONG, strongDependency.getHardness());
-    }
-    public void testDefualtHardnessRubber()
-    {
+    public void testDefaultHardness() {
       TaskManager taskMgr = getTaskManager();
-      taskMgr.getDependencyHardnessOption().setValue(TaskDependency.Hardness.RUBBER.getIdentifier());
+      Task task1 = taskMgr.createTask();
+      Task task2 = taskMgr.createTask();
+      TaskDependency strongDependency = taskMgr.getDependencyCollection().createDependency(task1, task2);
+      assertEquals(TaskDependency.Hardness.STRONG, strongDependency.getHardness());
+
+      taskMgr.getDependencyHardnessOption().setValue(TaskDependency.Hardness.RUBBER.toString());
       Task task3 = taskMgr.createTask();
       Task task4 = taskMgr.createTask();
       TaskDependency rubberDependency = taskMgr.getDependencyCollection().createDependency(task3, task4);

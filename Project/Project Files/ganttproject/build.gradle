@@ -1,202 +1,73 @@
-buildscript {
-    repositories {
-        mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
-    }
-    dependencies {
-        classpath "gradle.plugin.io.miret.etienne.gradle:sass-gradle-plugin:1.+"
-        classpath 'org.openjfx:javafx-plugin:0.0.13'
-    }
-}
-
-plugins {
-    id "org.jetbrains.kotlin.jvm"
-    id "maven-publish"
-    id "nu.studer.jooq" version "7.1.+"
-    id "org.jetbrains.kotlin.plugin.serialization" version "$kotlin_version"
-}
-
-apply plugin: 'application'
-apply plugin: 'org.openjfx.javafxplugin'
-apply plugin: 'io.miret.etienne.sass'
+apply plugin: 'java'
 
 ext {
-    libDir = 'lib/core'
-}
-
-javafx {
-    version = "17"
-    modules = [ 'javafx.controls', 'javafx.fxml', 'javafx.swing' ]
-}
-
-configurations {
-    exportedLibs
-    exported.extendsFrom archives, providedCompile, exportedLibs
+  libDir = 'lib/core'
 }
 
 dependencies {
-    providedCompile project(':biz.ganttproject.core')
-    providedCompile project(path: ':biz.ganttproject.app.libs', configuration: 'exported')
-    providedCompile project(path: ':biz.ganttproject.app.localization')
-
-    api files("lib/core/eclipsito.jar")
-    exportedLibs files("lib/core/eclipsito.jar")
-
-    implementation configurations.direct
-    implementation configurations.providedCompile
-    implementation configurations.exportedLibs
-
-    implementation fileTree(dir: project.ext.libDir, include: ['*.jar'])
-    implementation files('src/main/resources/resources')
-
-    implementation group: 'com.h2database', name: 'h2', version: '2.1.+'
-    implementation 'org.jooq:jooq:3.16.+'
-    jooqGenerator 'org.jooq:jooq-meta-extensions'
-
-    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0'
-
-    testImplementation group: 'org.easymock', name: 'easymock', version: '4.+'
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.+'
-
-    testRuntimeOnly group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.+'
-
-//    implementation "de.jensd:fontawesomefx-materialicons:2.2.+"
+  compile fileTree(dir: project.ext.libDir, include: ['*.jar'])
+  compile project(':..:biz.ganttproject.core')
+  compile files('data/resources')
+//  mavenDeps group: 'org.controlsfx', name: 'controlsfx', version: '8.40.11'
+//  mavenDeps group: 'com.fasterxml.jackson.core', name: 'jackson-core', version: '2.8.1'
+//  mavenDeps group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.8.1'
+//  mavenDeps group: 'de.jensd', name: 'fontawesomefx-fontawesome', version: '4.6.3', transitive: true
+    mavenDeps group: 'org.apache.httpcomponents', name: 'httpclient', version:'4.5.+'
+    mavenDeps group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.5.+'
+    mavenDeps group: 'org.jdom', name: 'jdom', version:'1.1.+'
+    mavenDeps group: 'net.sf.json-lib', name: 'json-lib', version:'2.4', classifier:'jdk15'
+    mavenDeps group: 'xml-apis', name: 'xml-apis', version:'2.0.2'
+    mavenDeps group: 'com.googlecode.concurrentlinkedhashmap', name: 'concurrentlinkedhashmap-lru', version:'1.4.2'
+    mavenDeps group: 'org.slf4j', name: 'slf4j-api', version:'1.7.+'
+    mavenDeps group: 'org.slf4j', name: 'slf4j-jdk14', version: '1.7.+'
 }
 
-jooq {
-    configurations {
-        main {
-            generationTool {
-                logging = org.jooq.meta.jaxb.Logging.WARN
-                generator {
-                    database {
-                        name = 'org.jooq.meta.extensions.ddl.DDLDatabase'
-                        properties {
-                            property {
-                                key = 'scripts'
-                                value = 'src/main/resources/resources/sql/init-project-database.sql'
-                            }
-                            property {
-                                key = 'defaultNameCase'
-                                value = 'lower'
-                            }
-                        }
-                    }
-                    target {
-                        packageName = 'biz.ganttproject.storage.db'
-                    }
-                }
-            }
-        }
-    }
+updateMavenDeps.doFirst {
+  into project.ext.libDir
 }
-
-compileKotlin {
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-}
-
-compileTestKotlin {
-    kotlinOptions {
-        jvmTarget = "11"
-    }
-}
-
-compileSass {
-    outputDir = project.file("${projectDir}/src/main/resources")
-    doLast {
-        copy {
-            from "${projectDir}/src/main/resources/biz/ganttproject/app/mdfx.css"
-            into "${projectDir}/src/main/resources/com/sandec/mdfx/"
-        }
-    }
-}
-
-processResources.dependsOn('compileSass')
 
 sourceSets {
     main {
+        java {
+            srcDir 'src'
+        }
         resources {
-            srcDirs = ["src/main/java", "src/main/resources"]
-            include "**/*.css", "**/*.properties", "**/*.sql"
+            srcDirs = ["src"]
+            include "**/*.css"
         }
     }
-
-    main.kotlin.srcDirs += "src/main/java"
-    test.kotlin.srcDirs += "src/test/java"
 }
 
-task copyPluginFiles(dependsOn: jar) {
-    doLast {
-        println ">>> Installing $project.name"
-        copy {
-            into(new File(rootProject.pluginsDir, project.name))
-            from(fileTree(".")) {
-                include "plugin.xml"
-            }
-            from(fileTree("src/main/resources")) {
-                include "resources/**.ttf"
-                include "resources/**.properties"
-                include "resources/calendar/**"
-                include "resources/fonts/**"
-                include "resources/icons/**"
-                include "resources/language/**"
-                include "resources/sql/**"
-                include "resources/xslfo/**"
-                include "resources/xslt/**"
-            }
-        }
-        copy {
-            into(new File(rootProject.pluginsDir, "${project.name}/lib/"))
-            from(jar.outputs.getFiles().getFiles().flatten())
-            from(configurations.compileClasspath.minus(configurations.providedCompile)) {
-                include "*.jar"
-                exclude "eclipsito.jar"
-            }
-            rename { filename -> filename + ".lib" }
-        }
-        println "<<< $project.name"
+task updateVersion {
+    doFirst {
+        def gpVersionFile = new File("${projectDir}/src/net/sourceforge/ganttproject/GPVersion.java")
+        def gpversion = gpVersionFile.getText('UTF-8')
+                .replaceAll('.*BUILD.NUMBER.*', "  public static String BUILD = \"${rootProject.buildNum}\"; // BUILD NUMBER")
+        gpVersionFile.write(gpversion, 'UTF-8')
+    }
+}
+task copyPluginFiles(type: Copy) {
+    into(new File(rootProject.pluginsDir, project.name))
+    from(jar.outputs.getFiles().getFiles().flatten())
+    from(fileTree(".")) {
+      include "plugin.xml"
+      include "lib/core/**.jar"
+      exclude "lib/core/eclipsito.jar"
+      include "data/resources/**.ttf"
+      include "data/resources/**.properties"
+      include "data/resources/calendar/**"
+      include "data/resources/icons/**"
+      include "data/resources/language/**"
+      include "data/resources/xslfo/**"
+      include "data/resources/xslt/**"
     }
 }
 
 task copyEclipsito(type: Copy) {
     into(rootProject.distBinDir)
     from(fileTree("lib/core")) {
-        include "eclipsito.jar"
+      include "eclipsito.jar"
     }
 }
 
-task copyPlugin(dependsOn: ['copyPluginFiles', 'copyEclipsito']) {
-    doFirst {
-        println "Copying $project.name to $rootProject.pluginsDir"
-    }
-}
-
-mainClassName = "net.sourceforge.ganttproject.AppKt"
-application {
-    applicationDefaultJvmArgs = project.ext.javaExportOptions + ["-Dorg.jooq.no-logo=true"] + (project.hasProperty("gpcloud") ? ["-Dgpcloud=${project.property("gpcloud")}"] : [])
-}
-test {
-    useJUnitPlatform()
-    testLogging {
-        exceptionFormat = 'full'
-    }
-}
-
-addPublishing(project)
-publishing {
-    publications {
-        core(MavenPublication) {
-            artifactId = 'ganttproject'
-            artifact jar
-        }
-    }
-}
-
-compileKotlin.dependsOn generateJooq
-compileKotlin.dependsOn compileSass
-compileJava.dependsOn compileSass
-
+task copyPlugin(dependsOn: ['copyPluginFiles', 'copyEclipsito']) << { println "Copying $project.name to $rootProject.pluginsDir" }

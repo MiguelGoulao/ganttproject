@@ -10,9 +10,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
-import biz.ganttproject.customproperty.CustomPropertyClass;
-import biz.ganttproject.customproperty.CustomPropertyDefinition;
-import biz.ganttproject.customproperty.CustomPropertyManager;
+import net.sourceforge.ganttproject.CustomPropertyClass;
+import net.sourceforge.ganttproject.CustomPropertyDefinition;
+import net.sourceforge.ganttproject.CustomPropertyManager;
 import net.sourceforge.ganttproject.task.Task;
 import net.sourceforge.ganttproject.task.TaskManager;
 
@@ -44,11 +44,11 @@ public class ImportTasksTestCase extends TaskTestCase {
             assertEquals(
                     "Unexpected count of the root's children AFTER importing. root="
                             + root, 2, nestedTasks.length);
-            List<Integer> expectedIDs = Arrays.asList(2,
-                    3);
+            List<Integer> expectedIDs = Arrays.asList(new Integer[] { new Integer(2),
+                    new Integer(3) });
             List<Integer> actualIds = new ArrayList<Integer>(2);
-            actualIds.add(nestedTasks[0].getTaskID());
-            actualIds.add(nestedTasks[1].getTaskID());
+            actualIds.add(new Integer(nestedTasks[0].getTaskID()));
+            actualIds.add(new Integer(nestedTasks[1].getTaskID()));
             assertEquals("Unexpected IDs of the imported tasks", new HashSet<Integer>(
                     expectedIDs), new HashSet<Integer>(actualIds));
         }
@@ -90,29 +90,5 @@ public class ImportTasksTestCase extends TaskTestCase {
         CustomPropertyDefinition barDef = findCustomPropertyByName(importTo.getCustomPropertyManager(), "bar");
         assertNotNull(barDef);
         assertEquals("bar", importTo.getTask(1).getCustomValues().getValue(barDef));
-    }
-
-  /**
-   * The root cause of the issue 2104: taskDependency::setConstraint method implementation calls
-   * constraint::setDependency(this), and if we just pass the same constraint instance from one dependency to another,
-   * which is the case when we import a project, we basically make the constraint instance invalid: it is now bound to
-   * activities of other tasks.
-   *
-   * This test case tests that the original constraint is not affected by the importProject call.
-   */
-  public void testImportDependencies_Issue2104() {
-      TaskManager taskManager = getTaskManager();
-      Task root = taskManager.getTaskHierarchy().getRootTask();
-      TaskManager importFrom = newTaskManager();
-
-      var task1 = importFrom.newTaskBuilder().withName("t1").build();
-      var task2 = importFrom.newTaskBuilder().withName("t2").build();
-      var dep = importFrom.getDependencyCollection().createDependency(task2, task1);
-      taskManager.importData(importFrom, Collections.emptyMap());
-
-      assertEquals(task2, dep.getConstraint().getActivityBinding().getDependantActivity().getOwner());
-      assertEquals(task1, dep.getConstraint().getActivityBinding().getDependeeActivity().getOwner());
-
-
     }
 }

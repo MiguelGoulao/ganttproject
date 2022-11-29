@@ -1,7 +1,5 @@
-Unicode True
-!define VERSION "3.2"
-!define VERSION_BUILD "3220"
-!include "MUI2.nsh"
+; The name of the installer
+!include "MUI.nsh"
 !include "LogicLib.nsh"
 
 Name "GanttProject"
@@ -13,19 +11,16 @@ Icon "ganttproject.ico"
 OutFile ganttproject-${VERSION_BUILD}.exe
 
 ; The default installation directory
-InstallDir $PROGRAMFILES\GanttProject-3.2
+InstallDir $PROGRAMFILES\GanttProject-2.8
 
 
 !define MUI_ABORTWARNING
-!define MUI_FINISHPAGE_RUN_TEXT "Launch GanttProject"
-!define MUI_FINISHPAGE_RUN "$INSTDIR\ganttproject.exe"
 
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_LICENSE "LICENSE"
 !insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
-!insertmacro MUI_PAGE_FINISH
 
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
@@ -84,8 +79,7 @@ Section "GanttProject"
   File LICENSE
   File logging.properties
 
-  File /r plugins
-  File /r runtime
+  File /r plugins-${VERSION}
 
   ; Write the installation path into the registry
   WriteRegStr HKLM SOFTWARE\GanttProject "Install_Dir" "$INSTDIR"
@@ -94,10 +88,6 @@ Section "GanttProject"
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "DisplayName" "GanttProject"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "UninstallString" '"$INSTDIR\uninstall.exe"'
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "Publisher" "BarD Software s.r.o."
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "DisplayVersion" "${VERSION}"
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "DisplayIcon" "$INSTDIR\ganttproject.ico"
-  WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "EstimatedSize" 190000
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\GanttProject" "NoRepair" 1
   WriteUninstaller "uninstall.exe"
@@ -175,4 +165,3 @@ Section "Uninstall"
   RMDir "$INSTDIR"
 
 SectionEnd
-

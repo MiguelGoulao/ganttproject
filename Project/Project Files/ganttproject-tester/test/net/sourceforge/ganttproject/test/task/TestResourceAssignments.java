@@ -2,9 +2,7 @@ package net.sourceforge.ganttproject.test.task;
 
 import biz.ganttproject.core.calendar.AlwaysWorkingTimeCalendarImpl;
 import biz.ganttproject.core.calendar.GPCalendarCalc;
-import biz.ganttproject.core.option.BooleanOption;
 import biz.ganttproject.core.option.ColorOption;
-import biz.ganttproject.core.option.DefaultBooleanOption;
 import biz.ganttproject.core.time.TimeUnitStack;
 import biz.ganttproject.core.time.impl.GPTimeUnitStack;
 import junit.framework.TestCase;
@@ -12,7 +10,11 @@ import net.sourceforge.ganttproject.gui.NotificationManager;
 import net.sourceforge.ganttproject.resource.HumanResource;
 import net.sourceforge.ganttproject.resource.HumanResourceManager;
 import net.sourceforge.ganttproject.roles.RoleManager;
-import net.sourceforge.ganttproject.task.*;
+import net.sourceforge.ganttproject.task.ResourceAssignment;
+import net.sourceforge.ganttproject.task.ResourceAssignmentMutator;
+import net.sourceforge.ganttproject.task.Task;
+import net.sourceforge.ganttproject.task.TaskManager;
+import net.sourceforge.ganttproject.task.TaskManagerConfig;
 
 import java.awt.*;
 import java.net.URL;
@@ -38,7 +40,7 @@ public class TestResourceAssignments extends TestCase {
         task.getAssignmentCollection().addAssignment(res2);
         Set<HumanResource> actualResources = extractResources(task);
         Set<HumanResource> expectedResources = new HashSet<HumanResource>(
-                Arrays.asList(res1, res2));
+                Arrays.asList(new HumanResource[] { res1, res2 }));
         assertEquals("Unexpected set of resources assigned to task=" + task,
                 expectedResources, actualResources);
     }
@@ -146,7 +148,7 @@ public class TestResourceAssignments extends TestCase {
     protected void setUp() throws Exception {
         super.setUp();
         myHumanResourceManager = new HumanResourceManager(RoleManager.Access
-                .getInstance().getDefaultRole(), new CustomColumnsManager());
+                .getInstance().getDefaultRole(), null);
         getResourceManager().create("test resource#1", 1);
         getResourceManager().create("test resource#2", 2);
         myTaskManager = newTaskManager();
@@ -188,11 +190,6 @@ public class TestResourceAssignments extends TestCase {
             @Override
             public NotificationManager getNotificationManager() {
               return null;
-            }
-
-            @Override
-            public BooleanOption getSchedulerDisabledOption() {
-                return new DefaultBooleanOption("scheduler.disabled", false);
             }
         });
     }
