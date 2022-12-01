@@ -19,6 +19,7 @@ along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
 package net.sourceforge.ganttproject.resource;
 
 import biz.ganttproject.core.calendar.GanttDaysOff;
+import biz.ganttproject.core.time.GanttCalendar;
 import com.google.common.base.Strings;
 import net.sourceforge.ganttproject.CustomProperty;
 import net.sourceforge.ganttproject.CustomPropertyDefinition;
@@ -186,6 +187,23 @@ public class HumanResource implements CustomPropertyHolder {
   }
 
   public void addDaysOff(GanttDaysOff gdo) {
+    //checks for repetition on the list because the app didnt support it already :(
+    for(int i = 0; i<myDaysOffList.size(); i++){
+      if(myDaysOffList.get(i).equals(gdo)){
+        return;
+      }
+    }
+    //check if it conflits with the dates of the tasks that the resource is involved
+    //checks if the interval of days off has tasks in it and checks if the
+    //start or finish of the interval of days off, are inside the interval of any task the resource is involved
+    for(int j = 0; j < myAssignments.size(); j++){
+      Task currentTask = myAssignments.get(j).getTask();
+      if((currentTask.getStart().before(gdo.getStart()) && currentTask.getEnd().after(gdo.getFinish())) ||
+              (currentTask.getStart().before(gdo.getFinish()) && currentTask.getStart().after(gdo.getStart()))||
+              (currentTask.getEnd().before(gdo.getFinish()) && currentTask.getEnd().after(gdo.getStart()))){
+        return;
+      }
+    }
     myDaysOffList.addElement(gdo);
     fireResourceChanged();
   }
@@ -213,6 +231,23 @@ public class HumanResource implements CustomPropertyHolder {
     myAssignments.add(result);
     resetLoads();
     fireAssignmentsChanged();
+    //when adding a resource to a task, the system checks if the resource has any
+    //days off in conflict with the  new task,if it has
+    // it removes the days off so the user can reconsider the days
+    // that this resource can go on vacation
+    Task newTask = result.getTask();
+    GanttCalendar Start = newTask.getStart();
+    GanttCalendar Finish = newTask.getEnd();
+    for(int i = 0; i < myDaysOffList.size(); i++){
+      GanttDaysOff currentDaysOff = myDaysOffList.get(i);
+      //detect conflict
+      if(currentDaysOff.getStart().before(Start) && currentDaysOff.getFinish().after(Finish)||
+              (currentDaysOff.getStart().before(Finish) && currentDaysOff.getStart().after(Start))||
+              (currentDaysOff.getFinish().before(Finish) && currentDaysOff.getFinish().after(Start))){
+        myDaysOffList.remove(i);
+        fireResourceChanged();
+      }
+    }
     return result;
   }
 
