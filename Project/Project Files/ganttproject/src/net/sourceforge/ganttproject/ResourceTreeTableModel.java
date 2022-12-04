@@ -234,14 +234,12 @@ public class ResourceTreeTableModel extends DefaultTreeTableModel {
 
             removeNodeFromParent(prevNode);
             insertNodeInto(prevNode, root, i);
-
            break;
           }
         }
         if (node.getChildCount() > 0) {
           node = sortTree(node);
         }
-
 
       }
 
