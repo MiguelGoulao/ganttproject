@@ -36,6 +36,8 @@ public class ResourceActionSet {
 
   private final ResourceMoveUpAction myResourceMoveUpAction;
 
+  private final ResourceSort resourceSort;
+
   private final ResourceMoveDownAction myResourceMoveDownAction;
 
   private final ResourceSendMailAction myResourceSendMailAction;
@@ -51,6 +53,7 @@ public class ResourceActionSet {
     myResourceDeleteAction = new ResourceDeleteAction(manager, resourceContext, projectFrame, uiFacade);
     myResourcePropertiesAction = new ResourcePropertiesAction(projectFrame, resourceContext, uiFacade);
     myResourceMoveUpAction = new ResourceMoveUpAction(table);
+    resourceSort = new ResourceSort(table);
     myResourceMoveDownAction = new ResourceMoveDownAction(table);
     myResourceSendMailAction = new ResourceSendMailAction(table);
     myAssignmentDelete = new AssignmentDeleteAction(assignmentContext, uiFacade);
@@ -80,6 +83,10 @@ public class ResourceActionSet {
 
   public ResourceMoveUpAction getResourceMoveUpAction() {
     return myResourceMoveUpAction;
+  }
+
+  public ResourceSort getResourceSort() {
+    return resourceSort;
   }
 
   public ResourceMoveDownAction getResourceMoveDownAction() {

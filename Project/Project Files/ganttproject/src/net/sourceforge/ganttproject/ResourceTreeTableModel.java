@@ -18,7 +18,6 @@ along with GanttProject.  If not, see <http://www.gnu.org/licenses/>.
  */
 package net.sourceforge.ganttproject;
 
-import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -36,7 +35,6 @@ import net.sourceforge.ganttproject.resource.ResourceTableNode;
 import net.sourceforge.ganttproject.task.ResourceAssignment;
 import net.sourceforge.ganttproject.task.Task;
 import net.sourceforge.ganttproject.task.TaskManager;
-import net.sourceforge.ganttproject.task.event.TaskHierarchyEvent;
 import net.sourceforge.ganttproject.task.event.TaskListenerAdapter;
 import net.sourceforge.ganttproject.task.event.TaskScheduleEvent;
 
@@ -121,6 +119,8 @@ public class ResourceTreeTableModel extends DefaultTreeTableModel {
     return root;
   }
 
+
+
   public void updateResources() {
     HumanResource[] listResources = myResourceManager.getResourcesArray();
 
@@ -171,7 +171,7 @@ public class ResourceTreeTableModel extends DefaultTreeTableModel {
   public DefaultMutableTreeTableNode addResource(HumanResource people) {
     DefaultMutableTreeTableNode result = new ResourceNode(people);
     insertNodeInto(result, root, root.getChildCount());
-    myResourceManager.toString();
+
     return result;
   }
 
@@ -190,12 +190,13 @@ public class ResourceTreeTableModel extends DefaultTreeTableModel {
   public boolean moveUp(HumanResource resource) {
     myResourceManager.up(resource);
     ResourceNode rn = getNodeForResource(resource);
-    int index = TreeUtil.getPrevSibling(root, rn);
+    int index = net.sourceforge.ganttproject.TreeUtil.getPrevSibling(root, rn);
     if (index == -1) {
       return false;
     }
     removeNodeFromParent(rn);
     insertNodeInto(rn, root, index);
+
     return true;
   }
 
@@ -209,6 +210,43 @@ public class ResourceTreeTableModel extends DefaultTreeTableModel {
     removeNodeFromParent(rn);
     insertNodeInto(rn, root, index);
     return true;
+  }
+  public void sortTree() {
+    this.sortTree(root);
+  }
+
+  private DefaultMutableTreeTableNode sortTree(DefaultMutableTreeTableNode root) {
+
+      for (int i = 0; i < root.getChildCount() - 1; i++) {
+        DefaultMutableTreeTableNode node = (DefaultMutableTreeTableNode) root
+                .getChildAt(i);
+        String nt = ((HumanResource) node.getUserObject()).getRole().getName();
+
+        for (int j = i + 1; j <= root.getChildCount() - 1; j++) {
+          DefaultMutableTreeTableNode prevNode = (DefaultMutableTreeTableNode) root
+                  .getChildAt(j);
+
+          String np =((HumanResource) prevNode.getUserObject()).getRole().getName();
+
+          if (nt.compareToIgnoreCase(np) > 0) {
+            removeNodeFromParent(node);
+            insertNodeInto(node, root, j);
+
+            removeNodeFromParent(prevNode);
+            insertNodeInto(prevNode, root, i);
+
+           break;
+          }
+        }
+        if (node.getChildCount() > 0) {
+          node = sortTree(node);
+        }
+
+
+      }
+
+      return root;
+
   }
 
   public void reset() {

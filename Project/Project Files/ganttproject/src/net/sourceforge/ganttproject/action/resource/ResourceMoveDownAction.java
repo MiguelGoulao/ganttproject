@@ -53,6 +53,7 @@ public class ResourceMoveDownAction extends GPAction implements TreeSelectionLis
     myTable.downResource();
   }
 
+
   @Override
   public GPAction asToolbarAction() {
     final ResourceMoveDownAction result  = new ResourceMoveDownAction(myTable);
