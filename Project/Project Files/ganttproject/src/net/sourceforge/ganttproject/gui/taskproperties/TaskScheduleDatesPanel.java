@@ -64,6 +64,7 @@ public class TaskScheduleDatesPanel {
   private Task myUnpluggedClone;
   private static final BooleanOption ourStartDateLock = new DefaultBooleanOption("", false);
   private static final BooleanOption ourEndDateLock = new DefaultBooleanOption("", true);
+  private static final BooleanOption ourEndDateLockNewMult = new DefaultBooleanOption("", false);
   private static final BooleanOption ourDurationLock = new DefaultBooleanOption("", false);
   private static BooleanOption ourPrevLock = ourEndDateLock;
   private final UIFacade myUiFacade;
@@ -203,6 +204,25 @@ public class TaskScheduleDatesPanel {
     propertiesPanel.add(durationField1);
   }
 
+  public void insertIntoNewMult(final JPanel propertiesPanel) {
+    // Begin date
+    myStartDatePicker = UIUtil.createDatePicker();
+    final GPAction startDateLockAction = createLockAction("option.taskProperties.main.scheduling.manual.value.start", ourStartDateLock);
+    JComponent startDateLabel = createLabel(language.getText("dateOfBegining"), ourStartDateLock, myStartDatePicker, startDateLockAction);
+
+
+    // End date
+    myEndDatePicker = UIUtil.createDatePicker();
+    final GPAction endDateLockAction = createLockAction("option.taskProperties.main.scheduling.manual.value.end", ourEndDateLockNewMult);
+    JComponent endDateLabel = createLabel(language.getText("dateOfEnd"), ourEndDateLockNewMult, myEndDatePicker, endDateLockAction);
+
+
+    propertiesPanel.add(startDateLabel);
+    propertiesPanel.add(myStartDatePicker);
+    propertiesPanel.add(endDateLabel);
+    propertiesPanel.add(myEndDatePicker);
+  }
+
   private GPCalendarCalc getCalendar() {
     return myUnpluggedClone.getManager().getCalendar();
   }
@@ -293,6 +313,10 @@ public class TaskScheduleDatesPanel {
   public GanttCalendar getStart() {
     return myStart;
   }
+
+  public Date getStartDate() {return myStartDatePicker.getDate();}
+
+  public Date getEndDate() {return myEndDatePicker.getDate();}
 
   public void setupFields(boolean isMilestone, boolean isSupertask) {
     if (isMilestone) {
