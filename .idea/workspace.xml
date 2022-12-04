@@ -5,14 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d437a5f3-b710-4734-8e7f-0c3abfa58e3d" name="Changes" comment="Remaining changes">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/ganttprojectCopy.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/gui/GanttDialogMultTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_2/metrics_element_2.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_2/metrics_excel_element_2.xlsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_3/data_collected_metrics.xls" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_3/metrics_set_element3.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_3/Use_case_descriptions.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_3/Use_case_diagrams.mdj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_1/use_case_descriptions_element_1.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_1/use_case_diagrams_element_1.mdj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_2/use_case_descriptions_element_2.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_2/use_case_diagrams_element_2.mdj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_3/Use_case_descriptions.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_3/Use_case_diagrams.mdj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/action/resource/ResourceSort.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/action/task/TaskNewMultAction$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/action/task/TaskNewMultAction.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttDialogMultTask$1$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttDialogMultTask$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttDialogMultTask.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$3.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$4.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$5.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_1/metrics_element_1.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_1/metrics_excel_element1.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_2/metrics_element_2.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_2/metrics_excel_element_2.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.core/build/libs/biz.ganttproject.core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.core/build/libs/biz.ganttproject.core.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.ical/build/libs/biz.ganttproject.impex.ical.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.ical/build/libs/biz.ganttproject.impex.ical.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.msproject2/build/libs/biz.ganttproject.impex.msproject2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.msproject2/build/libs/biz.ganttproject.impex.msproject2.jar" afterDir="false" />
@@ -25,7 +46,6 @@
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/build/libs/ganttproject-2.8.10-r2367.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/build/libs/ganttproject-2.8.10-r2367.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/eclipsito.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/eclipsito.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.core/biz.ganttproject.core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.core/biz.ganttproject.core.jar" afterDir="false" />
@@ -35,19 +55,7 @@
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.chart.pert/org.ganttproject.chart.pert.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.chart.pert/org.ganttproject.chart.pert.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.impex.htmlpdf/org.ganttproject.impex.htmlpdf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.impex.htmlpdf/org.ganttproject.impex.htmlpdf.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-tester/build/libs/ganttproject-tester.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-tester/build/libs/ganttproject-tester.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/GanttTree2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/GanttTree2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$4.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$5.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$6.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/libs/ganttproject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/libs/ganttproject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/GanttTree2.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/GanttTree2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/action/task/TaskNewMultAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/action/task/TaskNewMultAction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/gui/taskproperties/TaskScheduleDatesPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.chart.pert/build/libs/org.ganttproject.chart.pert.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.chart.pert/build/libs/org.ganttproject.chart.pert.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.impex.htmlpdf/build/libs/org.ganttproject.impex.htmlpdf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.impex.htmlpdf/build/libs/org.ganttproject.impex.htmlpdf.jar" afterDir="false" />
     </list>
@@ -81,21 +89,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Git.Branch.Popup.ShowAllRemotes": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/danie/IdeaProjects/ganttprojectCopy/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/gui",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Git.Branch.Popup.ShowAllRemotes&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/danie/IdeaProjects/ganttprojectCopy/Project/Project Files/ganttproject/src/net/sourceforge/ganttproject/gui&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\danie\IdeaProjects\ganttprojectCopy\Project\Project Files\ganttproject\src\net\sourceforge\ganttproject\gui" />
