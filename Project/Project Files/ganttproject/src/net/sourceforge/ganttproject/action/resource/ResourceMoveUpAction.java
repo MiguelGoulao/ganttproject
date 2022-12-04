@@ -57,14 +57,6 @@ public class ResourceMoveUpAction extends GPAction implements TreeSelectionListe
   public GPAction asToolbarAction() {
     final ResourceMoveUpAction result = new ResourceMoveUpAction(myTable);
     result.setFontAwesomeLabel(UIUtil.getFontawesomeLabel(result));
-    this.addPropertyChangeListener(new PropertyChangeListener() {
-      @Override
-      public void propertyChange(PropertyChangeEvent evt) {
-        if ("enabled".equals(evt.getPropertyName())) {
-          result.setEnabled((Boolean)evt.getNewValue());
-        }
-      }
-    });
     result.setEnabled(this.isEnabled());
     return result;
   }

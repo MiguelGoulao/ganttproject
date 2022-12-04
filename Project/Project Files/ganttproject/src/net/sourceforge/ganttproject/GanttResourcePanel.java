@@ -402,7 +402,7 @@ public class GanttResourcePanel extends TreeTableContainer<HumanResource, Resour
   @Override
   public void addToolbarActions(ToolbarBuilder builder) {
     builder.addButton(myResourceActionSet.getResourceMoveUpAction().asToolbarAction())
-        .addButton(myResourceActionSet.getResourceMoveDownAction().asToolbarAction());
+        .addButton(myResourceActionSet.getResourceMoveDownAction().asToolbarAction()).addButton(myResourceActionSet.getResourceSort().asToolbarAction());
   }
 
   public ResourceActionSet getResourceActionSet() {

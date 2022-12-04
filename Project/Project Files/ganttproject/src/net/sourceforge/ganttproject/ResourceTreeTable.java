@@ -242,6 +242,10 @@ public class ResourceTreeTable extends GPTreeTableBase {
     }
   }
 
+  public void sort(){
+    myResourceTreeModel.sortTree();
+  }
+
   void swapAssignents(AssignmentNode selected, AssignmentNode sibling) {
     ResourceAssignment selectedAssignment = selected.getAssignment();
     ResourceAssignment previousAssignment = sibling.getAssignment();
