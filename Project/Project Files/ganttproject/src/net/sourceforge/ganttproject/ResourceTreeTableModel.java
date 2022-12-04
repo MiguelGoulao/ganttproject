@@ -215,36 +215,45 @@ public class ResourceTreeTableModel extends DefaultTreeTableModel {
     this.sortTree(root);
   }
 
-  private DefaultMutableTreeTableNode sortTree(DefaultMutableTreeTableNode root) {
+  private void sortTree(DefaultMutableTreeTableNode root) {
 
-      for (int i = 0; i < root.getChildCount() - 1; i++) {
-        DefaultMutableTreeTableNode node = (DefaultMutableTreeTableNode) root
-                .getChildAt(i);
-        String nt = ((HumanResource) node.getUserObject()).getRole().getName();
+     boolean isSorted = true;
+      while(isSorted){
+        isSorted = sort();
+      }
+  }
 
-        for (int j = i + 1; j <= root.getChildCount() - 1; j++) {
-          DefaultMutableTreeTableNode prevNode = (DefaultMutableTreeTableNode) root
-                  .getChildAt(j);
 
-          String np =((HumanResource) prevNode.getUserObject()).getRole().getName();
+  private boolean sort() {
+    boolean done = false;
 
-          if (nt.compareToIgnoreCase(np) > 0) {
-            removeNodeFromParent(node);
-            insertNodeInto(node, root, j);
+    for (int i = 0; i < root.getChildCount() - 1; i++) {
+      DefaultMutableTreeTableNode node = (DefaultMutableTreeTableNode) root
+              .getChildAt(i);
+      String nt = ((HumanResource) node.getUserObject()).getRole().getName();
 
-            removeNodeFromParent(prevNode);
-            insertNodeInto(prevNode, root, i);
-           break;
-          }
+      for (int j = i + 1; j <= root.getChildCount() - 1; j++) {
+        DefaultMutableTreeTableNode prevNode = (DefaultMutableTreeTableNode) root
+                .getChildAt(j);
+
+        String np = ((HumanResource) prevNode.getUserObject()).getRole().getName();
+
+        if (nt.compareToIgnoreCase(np) > 0) {
+
+          moveUp((HumanResource) prevNode.getUserObject());
+//            removeNodeFromParent(node);
+//            insertNodeInto(node, root, j);
+//
+//            removeNodeFromParent(prevNode);
+//            insertNodeInto(prevNode, root, i);
+
+          done = true;
+          break;
         }
-        if (node.getChildCount() > 0) {
-          node = sortTree(node);
-        }
-
       }
 
-      return root;
-
+    }
+    return done;
   }
 
   public void reset() {
