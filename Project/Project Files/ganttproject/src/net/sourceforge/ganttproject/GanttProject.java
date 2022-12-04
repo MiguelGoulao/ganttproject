@@ -613,7 +613,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
       final TestGanttRolloverButton bNewTask = new TestGanttRolloverButton(taskNewAction);
       final TestGanttRolloverButton bMultNewTask = new TestGanttRolloverButton(taskMultNewAction);
       final TestGanttRolloverButton bnewResource = new TestGanttRolloverButton(resourceNewAction);
-      builder.addButton(bNewTask).addButton(bMultNewTask).addButton(bnewResource);
+      builder.addButton(bNewTask).addButtonWithImg(bMultNewTask).addButton(bnewResource);
       getTabs().addChangeListener(new ChangeListener() {
         @Override
         public void stateChanged(ChangeEvent changeEvent) {
@@ -625,7 +625,7 @@ public class GanttProject extends GanttProjectBase implements ResourceView, Gant
               return;
             case UIFacade.RESOURCES_INDEX:
               bNewTask.setVisible(false);
-              bMultNewTask.setVisible(true);
+              bMultNewTask.setVisible(false);
               bnewResource.setVisible(true);
               return;
           }
