@@ -1,7 +1,7 @@
 # ganttproject
 Projeto Gant, para o grupo de André, Daniel, Filipe, Joana, Júlio
 
-[users]
+
   name = Julio Simoes
   number = 44599
   id = Jr-os,
