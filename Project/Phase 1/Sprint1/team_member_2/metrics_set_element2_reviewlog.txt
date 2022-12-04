@@ -1,0 +1,5 @@
+44599 - Júlio Simões
+
+Esta em geral um bom relatório. Esta bem explicado o que é a métrica de complexidade, porque deve ser calculada e como deve ser calculada.
+O colega André faz a analise da métrica aplicada ao projecto do Gantt com a recurso a gráficos o que ajuda a visualizar a complexidade ciclomatica
+ao longo do projeto.

@@ -1,0 +1,10 @@
+44599 - Júlio Simões
+
+Esta em geral um bom relatório. 
+
+Notei um pequeno detalhe; na relação extend do Save Graph – Open graph, a seta esta invertida, o que se não estou errado,
+impede o utilizador de alguma vez executar o Use case Open Graph.
+
+O mesmo acontece para a relação undo-redo. Talvez a melhor opção aqui fosse eliminar a relação entre estes dois use case.
+
+As descrições estão boas e claras.
