@@ -4,61 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d437a5f3-b710-4734-8e7f-0c3abfa58e3d" name="Changes" comment="Remaining changes">
-      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_2/metrics_element_2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_2/metrics_excel_element_2.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_3/data_collected_metrics.xls" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 1/Sprint1/team_member_3/metrics_set_element3.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_3/Use_case_descriptions.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_3/Use_case_diagrams.mdj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_1/use_case_descriptions_element_1.doc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_1/use_case_diagrams_element_1.mdj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_2/use_case_descriptions_element_2.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_2/use_case_diagrams_element_2.mdj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_3/Use_case_descriptions.docx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Phase 2/Sprint2/team_member_3/Use_case_diagrams.mdj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/action/resource/ResourceSort.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/action/task/TaskNewMultAction$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/action/task/TaskNewMultAction.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttDialogMultTask$1$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttDialogMultTask$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttDialogMultTask.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$1.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$2.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$3.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$4.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean$5.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/classes/java/main/net/sourceforge/ganttproject/gui/GanttMultTaskPropertiesBean.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_1/metrics_element_1.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_1/metrics_excel_element1.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_2/metrics_element_2.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Phase 2/Sprint1/team_member_2/metrics_excel_element_2.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.core/build/libs/biz.ganttproject.core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.core/build/libs/biz.ganttproject.core.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.ical/build/libs/biz.ganttproject.impex.ical.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.ical/build/libs/biz.ganttproject.impex.ical.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.msproject2/build/libs/biz.ganttproject.impex.msproject2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/biz.ganttproject.impex.msproject2/build/libs/biz.ganttproject.impex.msproject2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/build/libs/...jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/build/libs/...jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileContent/annotation-processors.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/build/libs/ganttproject-2.8.10-r2367.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/build/libs/ganttproject-2.8.10-r2367.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/eclipsito.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/eclipsito.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.core/biz.ganttproject.core.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.core/biz.ganttproject.core.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.impex.ical/biz.ganttproject.impex.ical.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.impex.ical/biz.ganttproject.impex.ical.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.impex.msproject2/biz.ganttproject.impex.msproject2.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/biz.ganttproject.impex.msproject2/biz.ganttproject.impex.msproject2.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/ganttproject/ganttproject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/ganttproject/ganttproject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.chart.pert/org.ganttproject.chart.pert.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.chart.pert/org.ganttproject.chart.pert.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.impex.htmlpdf/org.ganttproject.impex.htmlpdf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-builder/dist-bin/plugins-2.8.10/org.ganttproject.impex.htmlpdf/org.ganttproject.impex.htmlpdf.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject-tester/build/libs/ganttproject-tester.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject-tester/build/libs/ganttproject-tester.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/libs/ganttproject.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/ganttproject/build/libs/ganttproject.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.chart.pert/build/libs/org.ganttproject.chart.pert.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.chart.pert/build/libs/org.ganttproject.chart.pert.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.impex.htmlpdf/build/libs/org.ganttproject.impex.htmlpdf.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Project/Project Files/org.ganttproject.impex.htmlpdf/build/libs/org.ganttproject.impex.htmlpdf.jar" afterDir="false" />
-    </list>
+    <list default="true" id="d437a5f3-b710-4734-8e7f-0c3abfa58e3d" name="Changes" comment="deliverables for phase 2" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669755496594</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="deliverables for phase 2">
+      <created>1670198435238</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670198435238</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -184,7 +137,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="element5_phase2_deliverables" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="element5_phase2_deliverables" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -199,6 +179,7 @@
     <MESSAGE value="Project Folder" />
     <MESSAGE value="Unversioned Files" />
     <MESSAGE value="Remaining files that aren't bugged" />
-    <option name="LAST_COMMIT_MESSAGE" value="Remaining files that aren't bugged" />
+    <MESSAGE value="deliverables for phase 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="deliverables for phase 2" />
   </component>
 </project>
