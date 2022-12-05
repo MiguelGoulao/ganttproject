@@ -1,0 +1,5 @@
+59835 - André Ribeiro
+
+O relatório aparenta estar bem feito, assim como o diagrama Use Case
+
+Apenas adicionaria uma imagem do diagrama ao documento do relatório para uma leitura mais fácil e rápidas
