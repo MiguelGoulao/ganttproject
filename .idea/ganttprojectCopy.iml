@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/biz.ganttproject.app.localization/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/biz.ganttproject.core/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/biz.ganttproject.desktop/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/biz.ganttproject.impex.ical/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/biz.ganttproject.impex.msproject2/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/ganttproject-builder/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/ganttproject/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/org.ganttproject.chart.pert/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Project/Project Files/org.ganttproject.impex.htmlpdf/src" isTestSource="false" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

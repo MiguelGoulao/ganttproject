@@ -1,9 +1,0 @@
-build
-dist-bin
-.idea
-.eclipse
-.gradle
-**/*.class
-ganttproject-builder/dist-win
-ganttproject-builder/dist-bin
-ganttproject-builder/runtime

@@ -1,0 +1,23 @@
+Júlio Simões - 44599
+
+--Speculative Generality--
+
+	Estas funções nunca são chamadas. 
+	Depende da intenção do developer na altura da criação dos métodos. 
+    Caso tenham sido criados com a intenção de serem utilizados um dia, 
+    então podemos considerar Speculative Generality. Caso contrário é código que terá sido utilizado em tempos,
+    e a dada altura deixou de ser preciso, e nesse caso estaríamos perante Dead Code.
+
+	
+
+-------------------------------------------------------------------------------------------------------------------
+Daniel Gavinho 59889 - Review of Dead Code
+
+Como demonstrado na imagem e comentário feito pelo André este código não tem nenhuma utilidade dentro do programa,
+por isso é o que considerariamos Dead Code.
+
+
+-------------------------------------------------------------------------------------------------------------------
+Joana Fernandes 60065 - Review of Data Class
+
+Como foi apontado, a classe tem apenas métodos getter. Portanto, é efetivamente uma Data Class.
