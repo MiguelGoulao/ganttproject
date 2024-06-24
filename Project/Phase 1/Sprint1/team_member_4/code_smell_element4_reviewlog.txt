@@ -1,0 +1,19 @@
+Júlio Simões - 44599
+
+--Message Chain--
+
+	A logica parece correta. Não há necessidade de precorrer 3 objectos para obter um.
+	Realocar a funcionalidade final para o início da cadeia, seria uma eventual estratégia  
+	a implementar nesta situação.
+
+-------------------------------------------------------------------------------------------------------------------
+Daniel Gavinho 59889 - Review of Data Class
+
+Como apontado pelo elemento 4 (Joana) esta class é constituida basicamente só de getters,
+a sugestão que ela dá para a resolução deste smell, parece-me ser a mais apropriada
+
+-------------------------------------------------------------------------------------------------------------------
+André Ribeiro 59835 - Dead Code
+
+O código apresentado evidentemente não tem utilidade para o resto do código, e por isso concordo
+com a sugestão de refatorização proposta. 
